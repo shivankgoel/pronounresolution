@@ -1,0 +1,1757 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=us-ascii">
+	<TITLE>BBN&rsquo;s PROPOSED ANSWER CATEGORIES FOR QUESTION ANSWERING</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.5  (FreeBSD)">
+	<META NAME="AUTHOR" CONTENT="Diane Bass">
+	<META NAME="CREATED" CONTENT="20020730;17130000">
+	<META NAME="CHANGED" CONTENT="20050824;14062100">
+	<STYLE>
+	<!--
+		@page { size: 8.5in 11in; margin: 0.75in }
+		P { margin-bottom: 0in; direction: ltr; color: #000000; widows: 2; orphans: 2 }
+		P.western { font-family: "Times New Roman", serif; font-size: 12pt; so-language: en-US }
+		P.cjk { font-family: "SimSun", "??"; font-size: 12pt; so-language: zh-CN }
+		P.ctl { font-family: "Times New Roman", serif; font-size: 10pt; so-language: ar-SA }
+		H2 { margin-top: 0in; margin-bottom: 0in; direction: ltr; color: #000000; widows: 2; orphans: 2 }
+		H2.western { font-family: "Times New Roman", serif; font-size: 12pt; so-language: en-US }
+		H2.cjk { font-family: "Times New Roman", serif; font-size: 12pt }
+		H2.ctl { font-family: "Times New Roman", serif; font-size: 12pt; so-language: ar-SA }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-US" TEXT="#000000" DIR="LTR">
+<P><BR>
+</P>
+<P ALIGN=CENTER><FONT SIZE=2><B>ANNOTATION GUIDELINES FOR ANSWER
+TYPES</B></FONT></P>
+<P ALIGN=CENTER><FONT SIZE=2><B>BBN TECHNOLOGIES</B></FONT></P>
+<P ALIGN=CENTER><FONT SIZE=2><B>Ada Brunstein</B></FONT></P>
+<P ALIGN=CENTER><FONT SIZE=2><B>8/03/02</B></FONT></P>
+<P><BR>
+</P>
+<P><BR>
+</P>
+<P><FONT SIZE=2>Below are annotation categories and guidelines
+assembled by BBN for the Question Answering task.  The 29 types
+represent answer categories and are described in the table below. 
+Following the table are brief annotation guidelines.   </FONT>
+</P>
+<P><BR>
+</P>
+<P><FONT SIZE=2>The description column in the table includes a
+general description of a category, some examples, and the sgml string
+that was used in annotation.  For types that have subtypes, the
+subtype column includes examples of each of the subtypes for that
+particular type and shows only the markable entity for that type and
+subtype in &lt;&gt;.  The SGML string for that subtype is also given.
+ Most examples come from the WSJ Treebank data.  </FONT>
+</P>
+<P><BR>
+</P>
+<P><FONT SIZE=2>These 29 categories include the five EDT types,
+Person, Organization, Location, GPE, Facility, with some minor
+modification to those guidelines.  For example, under EDT guidelines
+museums are facilities whereas here they are organizations.  They
+also include the MUC categories Money, Percent, Time and Date, again
+with some modifications.  For example, in the classification below
+Date includes durations, dates (relative and absolute) and age, each
+of which is identified as a subtype in the annotation.   </FONT>
+</P>
+<P><BR>
+</P>
+<P><FONT SIZE=2>The remaining categories were determined in part
+based on categories found in literature on the question answering
+task and in part based on BBN&rsquo;s own examination of the data.</FONT></P>
+<P><BR>
+</P>
+<P CLASS="western"><BR>
+</P>
+<TABLE WIDTH=728 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=7 CELLSPACING=0>
+	<COL WIDTH=70>
+	<COL WIDTH=244>
+	<COL WIDTH=370>
+	<TR>
+		<TD COLSPAN=3 WIDTH=712 VALIGN=TOP>
+			<P CLASS="western" ALIGN=CENTER><FONT SIZE=2><B>BBN&rsquo;s
+			PROPOSED ANSWER CATEGORIES FOR QUESTION ANSWERING</B></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=70>
+			<P CLASS="western" ALIGN=CENTER><FONT SIZE=2><B>Type</B></FONT></P>
+		</TD>
+		<TD WIDTH=244>
+			<P CLASS="western" ALIGN=CENTER><FONT SIZE=2><B>Brief Description</B></FONT></P>
+		</TD>
+		<TD WIDTH=370>
+			<P CLASS="western" ALIGN=CENTER><FONT SIZE=2><B>Subtypes</B></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=70>
+			<P CLASS="western"><FONT SIZE=2>Person </FONT>
+			</P>
+			<P CLASS="western"><FONT SIZE=2>Name</FONT></P>
+		</TD>
+		<TD WIDTH=244>
+			<P CLASS="western"><FONT SIZE=2>Markable:  Proper names of people,
+			including the following: fictional people, first names, last
+			names, individual or family names, unique nicknames.  Generational
+			markers such as Jr. and IV, are included (Ray Garrett Jr., Henry
+			IV). </FONT>
+			</P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=1 STYLE="font-size: 8pt">SGML: 
+			&lt;ENAMEX TYPE=&quot;PERSON&quot;&gt;Michael Henderson&lt;/ENAMEX&gt;</FONT></P>
+		</TD>
+		<TD WIDTH=370>
+			<P><FONT SIZE=2>No Subtypes</FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=70>
+			<P CLASS="western"><FONT SIZE=2>Person </FONT>
+			</P>
+			<P CLASS="western"><FONT SIZE=2>Descriptor</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2>Head of Descriptor</FONT></P>
+		</TD>
+		<TD WIDTH=244>
+			<P CLASS="western"><FONT SIZE=2>Markable:  Any head word of a
+			common noun referring to a person or group of people.  Any
+			occupational title in modifier position.  For example, for
+			&lsquo;President Bush&rsquo; we have a descriptor (&lsquo;president&rsquo;)
+			and a name (&lsquo;Bush&rsquo;).   </FONT>
+			</P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2>Unmarkable:  Honorific titles such
+			as Mr., Mrs., Sir, etc.</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2>Examples:  (note, only descriptor
+			annotation is indicated)</FONT></P>
+			<UL>
+				<LI><P CLASS="western"><FONT SIZE=2>his top &lt;aides&gt; </FONT>
+				</P>
+				<LI><P CLASS="western"><FONT SIZE=2>die-hard &lt;fans&gt;</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>&lt;analysts&gt; said</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>State court &lt;Judge&gt; 
+				Richard Curry</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>The &lt;owner&gt; , who begs
+				anonymity</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>&lt;Chief Executive&gt;  Sir 
+				 Christopher   Hogg</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>&lt;Chairman&gt; Jay B.
+				Langner</FONT></P>
+			</UL>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=1 STYLE="font-size: 8pt">SGML:  
+			&lt;ENAMEX TYPE=&quot;PER_DESC&quot;&gt; &lt;/ENAMEX&gt;</FONT></P>
+		</TD>
+		<TD WIDTH=370>
+			<P CLASS="western"><FONT SIZE=2>No Subtypes</FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=70>
+			<P CLASS="western"><FONT SIZE=2>NORP</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2>Name </FONT>
+			</P>
+		</TD>
+		<TD WIDTH=244>
+			<P CLASS="western"><FONT SIZE=2>This type is named after its
+			subtypes, nationality, other, religion, political.  The
+			distinction between NORP and other types is morphological. 
+			American and Americans is a nationality, while America and US are
+			GPEs, regardless of context.</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2>Markable:  Adjectival forms of GPE
+			names and Location names (such as American).  Adjectival forms of
+			named religions, heritage and political affiliation (such as
+			Democratic, Chinese-American, and Jewish).  Head words which refer
+			to people using the name of an entity they are affiliated with,
+			often GPE, Location, or Organization.  For example, the three
+			Democrats, the Muslims, etc.   [See subtypes for more examples.]</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=370>
+			<H2 CLASS="western"><FONT SIZE=2>Nationality<SPAN STYLE="font-weight: medium">:
+			Adjectival form of GPE/Location modifier,  (an American, Chinese
+			soil, European organization, etc.) or head word referring to a
+			person by the name of the GPE or Location they are from.</SPAN></FONT></H2>
+			<P CLASS="western"><BR>
+			</P>
+			<UL>
+				<LI><P CLASS="western"><FONT SIZE=2>the &lt;Brazilian&gt;
+				development</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>&lt;European&gt; euphoria</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>twice as many  Nobel  science
+				prizes as the &lt;Japanese&gt;</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>the &lt;Dutch&gt; publishing
+				group</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>a fellow &lt;Texan&gt;</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>a conservative &lt;Californian&gt;</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>&lt;Irish-American&gt;  (note
+				that this is marked as one entity, not two)</FONT></P>
+			</UL>
+			<P CLASS="western" STYLE="margin-left: 0.25in"><BR>
+			</P>
+			<H2 CLASS="western"><FONT SIZE=2>Religion<SPAN STYLE="font-weight: medium">:
+			Any adjectival form of a religion, regardless of context.</SPAN></FONT></H2>
+			<P CLASS="western"><BR>
+			</P>
+			<UL>
+				<LI><P CLASS="western"><FONT SIZE=2>Mr. Sohmer , who is &lt;Jewish&gt;</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>a devout &lt;Catholic&gt;</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>The &lt;Hindu&gt; newspaper</FONT></P>
+			</UL>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2><B>Political: </B></FONT>
+			</P>
+			<UL>
+				<LI><P CLASS="western"><FONT SIZE=2>Some &lt;Democrats&gt;</FONT></P>
+			</UL>
+			<UL>
+				<LI><P CLASS="western"><FONT SIZE=2>a &lt;Communist&gt; official</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>France's &lt;Socialist&gt;
+				government</FONT></P>
+			</UL>
+			<P CLASS="western" STYLE="margin-left: 0.25in"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2><B>Other:</B>	</FONT></P>
+			<UL>
+				<LI><P CLASS="western"><FONT SIZE=2>&lt;African-American&gt;
+				activist</FONT></P>
+			</UL>
+			<UL>
+				<LI><P CLASS="western"><FONT SIZE=2>&lt;Arab&gt; uprising</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>&lt;Francophone&gt;</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>&lt; Mafioso&gt;</FONT></P>
+			</UL>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=70>
+			<P CLASS="western"><FONT SIZE=2>Facility Name</FONT></P>
+		</TD>
+		<TD WIDTH=244>
+			<P CLASS="western"><FONT SIZE=2>Names of man-made structures,
+			including infrastructure, buildings, monuments, etc.</FONT></P>
+			<P CLASS="western"><FONT SIZE=2>See subtypes for examples.</FONT></P>
+		</TD>
+		<TD WIDTH=370>
+			<P CLASS="western"><FONT SIZE=2><B>Building: </B>buildings,
+			cathedrals, laboratories, monasteries, plants, refineries,
+			stadiums, synagogues, towers, vineyards, etc.</FONT></P>
+			<H2 CLASS="western"><BR>
+			</H2>
+			<H2 CLASS="western"><FONT SIZE=2>Bridge<SPAN STYLE="font-weight: medium">:
+			bridges</SPAN></FONT></H2>
+			<UL>
+				<LI><P CLASS="western"><FONT SIZE=2>&lt;G Street Bridge&gt;</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>&lt;Golden Gate&gt;</FONT></P>
+			</UL>
+			<H2 CLASS="western"><BR>
+			</H2>
+			<P CLASS="western"><FONT SIZE=2><B>Airport: </B>airports<B>, </B>parts
+			of an airport including terminals, runways, and towers, air force
+			bases</FONT></P>
+			<H2 CLASS="western"><BR>
+			</H2>
+			<P CLASS="western"><FONT SIZE=2><B>Highway_Street</B>: avenues,
+			boardwalks, highways, plazas, streets, exits</FONT></P>
+			<UL>
+				<LI><P CLASS="western"><FONT SIZE=2>&lt;Interstate 64&gt;</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>&lt;Madison Avenue&gt;</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>&lt;Exit 10&gt;</FONT></P>
+			</UL>
+			<H2 CLASS="western" ALIGN=CENTER><BR>
+			</H2>
+			<H2 CLASS="western"><FONT SIZE=2>Attraction<SPAN STYLE="font-weight: medium">:
+			amusement parks, tourist attractions, aquariums</SPAN></FONT></H2>
+			<UL>
+				<LI><P CLASS="western"><FONT SIZE=2>&lt;Statue of Liberty&gt;</FONT></P>
+			</UL>
+			<H2 CLASS="western"><BR>
+			</H2>
+			<P CLASS="western"><FONT SIZE=2><B>Other: </B> courtyards,  farms,
+			 (gas) stations, Space Centers, (Labor) camps, mines, oil fields,
+			ports, (subway) stations, golf courses</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=70>
+			<P CLASS="western"><FONT SIZE=2>Facility </FONT>
+			</P>
+			<P CLASS="western"><FONT SIZE=2>Descriptor</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2>Head of </FONT>
+			</P>
+			<P CLASS="western"><FONT SIZE=2>Descriptor</FONT></P>
+		</TD>
+		<TD WIDTH=244>
+			<P CLASS="western"><FONT SIZE=2>Head noun of a noun phrase
+			describing buildings, bridges, airports, highways, attractions&hellip;</FONT></P>
+		</TD>
+		<TD WIDTH=370>
+			<P CLASS="western"><FONT SIZE=2>(Same categories as for Facility
+			Name, but with different examples)</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2><B>Building: </B></FONT>
+			</P>
+			<UL>
+				<LI><H2 CLASS="western" STYLE="font-weight: medium"><FONT SIZE=2>the
+				&lt;plant&gt; 's construction cost</FONT></H2>
+				<LI><P CLASS="western"><FONT SIZE=2>spending on single-family
+				&lt;homes&gt;</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>built in a &lt;garage&gt;</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>a new computer &lt;lab&gt;</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>The entire second &lt;floor&gt;</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>a third &lt;room&gt;</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>Westinghouse would own 70 %
+				of the &lt;facility&gt;</FONT></P>
+			</UL>
+			<P CLASS="western"><BR>
+			</P>
+			<H2 CLASS="western"><FONT SIZE=2>Bridge<SPAN STYLE="font-weight: medium">:
+			bridges</SPAN></FONT></H2>
+			<UL>
+				<LI><P CLASS="western"><FONT SIZE=2>the collapsed Route 880
+				&lt;overpass&gt;</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>Roads and &lt;bridges&gt; in
+				the Bay area</FONT></P>
+			</UL>
+			<H2 CLASS="western"><BR>
+			</H2>
+			<P CLASS="western"><FONT SIZE=2><B>Airport: </B>airports<B>, </B>parts
+			of an airport including terminals, runways, and towers, air force
+			bases</FONT></P>
+			<UL>
+				<LI><P CLASS="western"><FONT SIZE=2>build a cargo &lt;terminal&gt;</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>travelers stuck at some
+				&lt;airports&gt;</FONT></P>
+			</UL>
+			<H2 CLASS="western"><BR>
+			</H2>
+			<P CLASS="western"><FONT SIZE=2><B>Highway_Street</B>: avenues,
+			boardwalks, highways, plazas, streets, exits</FONT></P>
+			<UL>
+				<LI><H2 CLASS="western" STYLE="font-weight: medium"><FONT SIZE=2>looking
+				for an &lt;interstate&gt;</FONT></H2>
+				<LI><P CLASS="western"><FONT SIZE=2>tiny shops and twisted
+				&lt;alleys&gt;</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>traffic &lt;intersections&gt;</FONT></P>
+			</UL>
+			<P CLASS="western"><BR>
+			</P>
+			<H2 CLASS="western"><FONT SIZE=2>Attraction<SPAN STYLE="font-weight: medium">:
+			amusement parks, tourist attractions, aquariums</SPAN></FONT></H2>
+			<UL>
+				<LI><H2 CLASS="western" STYLE="font-weight: medium"><FONT SIZE=2>1.5
+				million-gallon saltwater &lt;aquarium&gt;</FONT></H2>
+			</UL>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2><B>Other: </B> courtyards,  farms,
+			 (gas) stations, Space Centers, (Labor) camps, mines, oil fields,
+			parks, ports, (subway) stations, </FONT>
+			</P>
+			<UL>
+				<LI><P CLASS="western"><FONT SIZE=2>space &lt;station&gt;</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>six &lt;mines&gt;</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>&lt;junkyard&gt;</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>The &lt;dam&gt;</FONT></P>
+			</UL>
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=70>
+			<P><FONT SIZE=2>Organization </FONT>
+			</P>
+			<P><FONT SIZE=2>Name</FONT></P>
+		</TD>
+		<TD WIDTH=244>
+			<P><FONT SIZE=2>Markable:  Names of companies, government
+			agencies, educational institutions and other institutions:  sport
+			teams, hospitals, museums, and libraries.  White House, Pentagon,
+			Kremlin are ORG names as is Capitol Hill.  Adjectival forms of
+			organization names are also included:  Congressional efforts, etc.
+			 </FONT>
+			</P>
+			<P><BR>
+			</P>
+			<P><FONT SIZE=2>Newspaper names should be marked as ORG names
+			regardless of whether they refer to the artifact or the
+			organization.  </FONT>
+			</P>
+			<P><BR>
+			</P>
+			<P><FONT SIZE=2>Organization names also include products that are
+			referred to by their manufacturer&rsquo;s name (as in &ldquo;I
+			bought a Buick&rdquo;).  </FONT>
+			</P>
+			<P><BR>
+			</P>
+			<P><FONT SIZE=2>Annotators will have to determine whether groups,
+			teams, forces, etc. refer to people or organizations.</FONT></P>
+			<P><BR>
+			</P>
+			<P><FONT SIZE=2>Unmarked: organized crime</FONT></P>
+		</TD>
+		<TD WIDTH=370>
+			<P CLASS="western"><FONT SIZE=2><B>Government</B>: </FONT>
+			</P>
+			<P CLASS="western"><FONT SIZE=2>Names: government organizations
+			(State Department, SEC, military, etc.), American [FBI] &ndash;
+			nationality before an abbreviation is marked separately, Attorney
+			General&rsquo;s Office, Capitol Hill, City Hall, European Union,
+			EU, European Community, EC, Interpol, Minfin, NATO, NYPD, OPEC,
+			Parliament, Prosecutor's Office, Russian Interior Ministry /
+			Russian ministry of the interior, State Duma, United Nations,
+			UNESCO, US Army, US Embassy </FONT>
+			</P>
+			<P CLASS="western" STYLE="text-indent: 0.5in"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2>Descriptors: GPE governments,
+			administration (i.e. Clinton/US administration), jury, militia,
+			police department &ndash; only &ldquo;department&rdquo; is marked
+			when the Dept name is not given, Regulators, state - when used to
+			refer to the gov&rsquo;t (if it refers to the State Department
+			then it is marked ORG Name.</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2><B>Corporation</B>: Big Board,
+			boards of private organizations, casinos, daily/weekly if used to
+			describe a newspaper or magazine, divisions of private
+			organizations, media organizations (TV, radio, newspapers,
+			magazines), private organizations, shops, stock exchanges,
+			sometimes ventures </FONT>
+			</P>
+			<P CLASS="western"><FONT SIZE=2>		</FONT></P>
+			<P CLASS="western"><FONT SIZE=1 STYLE="font-size: 8pt">SGML:
+			&lt;ENAMEX TYPE=&quot;ORGANIZATION:CORPORATION&quot;&gt; &lt;/ENAMEX&gt;</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2><B>Educational</B>: schools,
+			universities</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=1 STYLE="font-size: 8pt">SGML:
+			&lt;ENAMEX TYPE=&quot;ORG_DESC:EDUCATIONAL&quot;&gt;  &lt;/ENAMEX&gt;</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2><B>Religious</B>: churches,
+			mosques, etc.</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=1 STYLE="font-size: 8pt">SGML: 
+			&lt;ENAMEX TYPE=&quot;ORGANIZATION:RELIGIOUS&quot;&gt; &lt;/ENAMEX&gt;</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2><B>Political</B>: political
+			parties: Contra(s), Democratic Party, PLO, Sandanista, Taliban	</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=1 STYLE="font-size: 8pt">SGML: 
+			&lt;ENAMEX TYPE=&quot;ORGANIZATION:POLITICAL&quot;&gt;  &lt;/ENAMEX&gt;</FONT></P>
+			<P><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2><B>Museum</B>: museums</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=1 STYLE="font-size: 8pt">SGML: 
+			&lt;ENAMEX TYPE=&quot;ORGANIZATION:MUSEUM&quot;&gt; &lt;/ENAMEX&gt;</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2><B>Hotel</B>: hotels, resorts</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=1 STYLE="font-size: 8pt">SGML: 
+			&lt;ENAMEX TYPE=&quot;ORGANIZATION:HOTEL&quot;&gt;  &lt;/ENAMEX&gt;</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2><B>Hospital</B>: hospitals</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=1 STYLE="font-size: 8pt">SGML: 
+			&lt;ENAMEX TYPE=&quot;ORGANIZATION:HOSPITAL&quot;&gt;   &lt;/ENAMEX&gt;</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2><B>Other</B>: libraries, unions,
+			environmental agencies, professional associations, health
+			associations (Planned Parenthood), musical groups</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2>Names: city or country name
+			refering to a sports team, i.e. &ldquo;&lt;<I>Boston&gt; shortstop
+			Nomar Garciapara</I>&rdquo;, IMF, National Sports Fund, Planned
+			Parenthood, Professional Organizations (Health Ins. Association of
+			America, etc.), Red Sox, (city names preceding teams are
+			considered part of the team name, as in New York Yankees), World
+			Bank, Yankees</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=1 STYLE="font-size: 8pt">SGML: 
+			&lt;ENAMEX TYPE=&quot;ORGANIZATION:OTHER&quot;&gt;  &lt;/ENAMEX&gt;</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=70>
+			<P CLASS="western"><FONT SIZE=2>Organization Descriptor</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2>Head of Descriptor</FONT></P>
+		</TD>
+		<TD WIDTH=244>
+			<P CLASS="western"><FONT SIZE=2>Markable:  Heads of descriptors of
+			companies, governments, government agencies, educational
+			institutions and other institutions:  sport teams, hospitals,
+			museums, and libraries.  In &ldquo;I bought the newspaper&rdquo;,
+			&ldquo;the newspaper&rdquo; is not an organization descriptor so
+			it is unmarkable.  References to &ldquo;offices&rdquo; should be
+			marked organization descriptor.</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=1 STYLE="font-size: 8pt">SGML: 
+			&lt;ENAMEX TYPE=&quot;ORG_DESC:SUBTYPE&quot;&gt;  &lt;/ENAMEX&gt;</FONT></P>
+		</TD>
+		<TD WIDTH=370>
+			<P CLASS="western"><FONT SIZE=2>See Organization name for subtypes</FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=70>
+			<P CLASS="western"><FONT SIZE=2>GPE </FONT>
+			</P>
+			<P CLASS="western"><FONT SIZE=2>Name</FONT></P>
+		</TD>
+		<TD WIDTH=244>
+			<P CLASS="western"><FONT SIZE=2>Markable: Names of countries,
+			cities, states, provinces, municipalities.  In cases like
+			&ldquo;southern California&rdquo;, California&rdquo; is marked as
+			a GPE name and there is no other markup.</FONT></P>
+		</TD>
+		<TD WIDTH=370>
+			<P CLASS="western"><FONT SIZE=2><B>Country</B>: countries, nations</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=1 STYLE="font-size: 8pt">SGML: 
+			&lt;ENAMEX TYPE=&quot;GPE_DESC:COUNTRY&quot;&gt;  &lt;/ENAMEX&gt;</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2><B>City</B>: cities, towns,
+			villages, Washington &amp; DC are tagged separately</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=1 STYLE="font-size: 8pt">SGML: 
+			&lt;ENAMEX TYPE=&quot;GPE:CITY&quot;&gt;  &lt;/ENAMEX&gt;</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2><B>State/province</B>: states,
+			provinces</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=1 STYLE="font-size: 8pt">SGML: 
+			&lt;ENAMEX TYPE=&quot;GPE:STATE_PROVINCE&quot;&gt; &lt;/ENAMEX&gt;</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2><B>Other:</B> Boroughs, islands
+			that have governments</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=1 STYLE="font-size: 8pt">SGML: 
+			&lt;ENAMEX TYPE=&quot;GPE:OTHER&quot;&gt;  &lt;/ENAMEX&gt;</FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=70>
+			<P CLASS="western"><FONT SIZE=2>GPE Descriptor</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2>Head of Descriptor</FONT></P>
+		</TD>
+		<TD WIDTH=244>
+			<P CLASS="western"><FONT SIZE=2>Markable: Heads of descriptors of
+			countries, cities, states, provinces, municipalities</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=1 STYLE="font-size: 8pt">SGML: 
+			&lt;ENAMEX TYPE=&quot;GPE_DESC:SUBTYPE&quot;&gt;  &lt;/ENAMEX&gt;</FONT></P>
+		</TD>
+		<TD WIDTH=370>
+			<P CLASS="western"><FONT SIZE=2>See GPE Name for subtypes.</FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=70>
+			<P CLASS="western"><FONT SIZE=2>Location</FONT></P>
+			<P CLASS="western"><FONT SIZE=2>Name</FONT></P>
+		</TD>
+		<TD WIDTH=244>
+			<P CLASS="western"><FONT SIZE=2>Markable: Names of locations other
+			than GPE&rsquo;s, e.g. mountain ranges, coasts, borders, planets,
+			geocoordinates, bodies of water.  Also included in this category
+			are named regions such as the Middle East, areas, neighborhoods,
+			continents and regions of continents such as Eastern Europe.  </FONT>
+			</P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2>Unmarkable: Do not mark deictics
+			or other non-proper nouns; here, there, everywhere, etc. 
+			Directional modifiers such as western are not marked.</FONT></P>
+		</TD>
+		<TD WIDTH=370>
+			<H2 CLASS="western"><FONT SIZE=2>River<SPAN STYLE="font-weight: medium">:
+			rivers</SPAN></FONT></H2>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=1 STYLE="font-size: 8pt">SGML: 
+			&lt;ENAMEX TYPE=&quot;LOCATION:RIVER&quot;&gt; &lt;/ENAMEX&gt;</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<H2 CLASS="western"><FONT SIZE=2>Lake<SPAN STYLE="font-weight: medium">_</SPAN>Sea<SPAN STYLE="font-weight: medium">_</SPAN>Ocean<SPAN STYLE="font-weight: medium">:</SPAN>
+			<SPAN STYLE="font-weight: medium">Bay, Gulf, </SPAN></FONT>
+			</H2>
+			<H2 CLASS="western" STYLE="font-weight: medium"><BR>
+			</H2>
+			<H2 CLASS="western" STYLE="font-weight: medium"><FONT SIZE=1 STYLE="font-size: 8pt">SGML:
+			 &lt;ENAMEX TYPE=&quot;LOCATION:LAKE_SEA_OCEAN&quot;&gt; &lt;/ENAMEX&gt;</FONT></H2>
+			<H2 CLASS="western"><BR>
+			</H2>
+			<H2 CLASS="western"><FONT SIZE=2>Border<SPAN STYLE="font-weight: medium">:
+			named border regions</SPAN></FONT></H2>
+			<UL>
+				<LI><H2 CLASS="western" STYLE="font-weight: medium"><FONT SIZE=2>the
+				famous &lt;Four Corners&gt; intersection</FONT></H2>
+			</UL>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=1 STYLE="font-size: 8pt">SGML: 
+			&lt;ENAMEX TYPE=&quot;LOCATION:BORDER&quot;&gt;  &lt;/ENAMEX&gt; </FONT>
+			</P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2><B>Region: </B>Named areas larger
+			than a city; Baltic, Bay Area, Bekka Valley, Benelux, Central
+			America, East bloc, Indochina, Latin America, Long Island,
+			Scandinavia, Silicon Valley, Urals,Western Hemisphere</FONT></P>
+			<UL>
+				<LI><P CLASS="western"><FONT SIZE=2>&lt;New England&gt;</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>&lt;Central America&gt;</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>the &lt;Northeast&gt;</FONT></P>
+			</UL>
+			<P CLASS="western"><BR>
+			</P>
+			<H2 CLASS="western"><FONT SIZE=1 STYLE="font-size: 8pt"><SPAN STYLE="font-weight: medium">SGML</SPAN>:
+			 <SPAN STYLE="font-weight: medium">the &lt;ENAMEX
+			TYPE=&quot;LOCATION:REGION&quot;&gt;  &lt;/ENAMEX&gt;</SPAN></FONT></H2>
+			<H2 CLASS="western"><BR>
+			</H2>
+			<H2 CLASS="western"><FONT SIZE=2>Latitude-Longitude<SPAN STYLE="font-weight: medium">:</SPAN></FONT></H2>
+			<H2 CLASS="western" STYLE="font-weight: medium"><BR>
+			</H2>
+			<H2 CLASS="western"><FONT SIZE=2>Continent<SPAN STYLE="font-weight: medium">:
+			continents</SPAN></FONT></H2>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=1 STYLE="font-size: 8pt">SGML: 
+			&lt;ENAMEX TYPE=&quot;LOCATION:CONTINENT&quot;&gt; &lt;/ENAMEX&gt;</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2><B>Other:  </B>Brighton Beach,
+			Micro-rayon, Named districts of a city, School district</FONT></P>
+			<UL>
+				<LI><H2 CLASS="western" STYLE="font-weight: medium"><FONT SIZE=2>&lt;Earth&gt;</FONT></H2>
+			</UL>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=1 STYLE="font-size: 8pt">SGML: 
+			&lt;ENAMEX TYPE=&quot;LOCATION:OTHER&quot;&gt;  &lt;/ENAMEX&gt;</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=70>
+			<P CLASS="western"><FONT SIZE=2>Product Name</FONT></P>
+		</TD>
+		<TD WIDTH=244>
+			<P CLASS="western"><FONT SIZE=2>Markable:  Name of any product
+			(but does NOT include the manufacturer), e.g., &lsquo;Ford Taurus&rsquo;
+			is an organization name followed by a product name.  This category
+			covers any product name.  Product names of foods should be marked
+			Product, not substance.  Products that are referred to using their
+			manufacturer&rsquo;s name (as in &ldquo;I bought a Buick&rdquo;),
+			should be marked ORG name, not Product.  Services and financial
+			plans are not markable.  </FONT>
+			</P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2>Unmarkable:  credit cards,
+			checking accounts, CDs, credit plans</FONT></P>
+		</TD>
+		<TD WIDTH=370>
+			<P CLASS="western"><FONT SIZE=2><B>Weapon</B>: Missiles, guns,
+			bombs, etc.  Often what precedes a weapon-desc will be an org-name
+			rather than a weapon name.  </FONT>
+			</P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=1 STYLE="font-size: 8pt">SGML: 
+			&lt;ENAMEX TYPE=&quot;PRODUCT:WEAPON&quot;&gt;  &lt;/ENAMEX&gt;</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2><B>Vehicle</B>: Name of make, ex.
+			(Subaru) Legacy</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=1 STYLE="font-size: 8pt">SGML: 
+			&lt;ENAMEX TYPE=&quot;PRODUCT:VEHICLE&quot;&gt; &lt;/ENAMEX&gt;</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2><B>Other</B>:</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=1 STYLE="font-size: 8pt">SGML: 
+			&lt;ENAMEX TYPE=&quot;PRODUCT:OTHER&quot;&gt; &lt;/ENAMEX&gt;</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=70>
+			<P CLASS="western"><FONT SIZE=2>Product</FONT></P>
+			<P CLASS="western"><FONT SIZE=2>Descriptor</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2>Head of Descriptor</FONT></P>
+		</TD>
+		<TD WIDTH=244>
+			<P CLASS="western"><FONT SIZE=2>Markable:  Descriptions of weapons
+			and vehicles only.  Cars, buses, machine guns, bombs, missiles,
+			bullets, etc.<FONT SIZE=1 STYLE="font-size: 8pt"> </FONT></FONT>
+			</P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=1 STYLE="font-size: 8pt">SGML: 
+			&lt;ENAMEX TYPE=&quot;PRODUCT_DESC:SUBTYPE&quot;&gt; &lt;/ENAMEX&gt;</FONT></P>
+		</TD>
+		<TD WIDTH=370>
+			<P CLASS="western"> <FONT SIZE=2>See Product Name for subtypes.</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=70>
+			<P CLASS="western"><FONT SIZE=2>Date </FONT>
+			</P>
+		</TD>
+		<TD WIDTH=244>
+			<P><FONT SIZE=2>Markable:  Used to classify a reference to a date
+			or period.  Ex:  November 2 2001, January, Monday, 60&rsquo;s,
+			1940&rsquo;s, several years.  Ex:  two months, 4 months, last
+			week, last year, yesterday, tomorrow, spring, summer, fall,
+			winter, fourth quarter, first quarter, today, etc.  Age also falls
+			under this category, even when it&rsquo;s a noun phrase referring
+			to a person:  the 5-year-old, 5 years old, Jane Doe, 5, etc.  </FONT>
+			</P>
+			<P><BR>
+			</P>
+			<P><FONT SIZE=2>Unmarkable: Dates that are part of rate
+			expressions such as per/a day or per/a year should not be marked.</FONT></P>
+		</TD>
+		<TD WIDTH=370>
+			<P CLASS="western"><FONT SIZE=2><B>Date</B>: answers the question
+			&ldquo;when&rdquo; and includes absolute dates (March 1), relative
+			dates that are not durations (last week, 3 years ago, 3 months
+			ended Oct 1, first quarter), other examples: </FONT>
+			</P>
+			<UL>
+				<LI><P CLASS="western"><FONT SIZE=2>&lt;the quarter ending March
+				30&gt;</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>&lt;June&gt;</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>&lt;the previous quarter&gt;</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>&lt;a year ago&gt;</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>&lt;summer&gt;</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>&lt;1960s&gt;</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>&lt;20 years earlier&gt;</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>&lt;a couple of years ago&gt;</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>&lt;the quarter ending March
+				30&gt;</FONT></P>
+			</UL>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2>Phrases with modifers like
+			&ldquo;before&rdquo;, &ldquo;after&rdquo; &ldquo;later&rdquo;
+			(these modifiers are included), 1990-1995, these days, today,
+			yesterday, tomorrow, Tuesday, February 3, 2002</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2>Conjoined dates, like &ldquo;eight
+			and ninth centuries,&rdquo; or &ldquo;23, 24, and 28 January,&rdquo;
+			or &ldquo;May 3, 4, 10, and 11,&rdquo; are markable as one entity.</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=1 STYLE="font-size: 8pt">SGML: 
+			&lt;TIMEX TYPE=&quot;DATE:DATE&quot;&gt;  &lt;/TIMEX&gt;</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2><B>Duration</B>: answers the
+			question &ldquo;how long&rdquo; and includes a period of time (2
+			years, centuries, 16 weeks, less than 2 years, 6 months, 52-week).</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=1 STYLE="font-size: 8pt">SGML: 
+			&lt;TIMEX TYPE=&quot;DATE:DURATION&quot;&gt;  &lt;/TIMEX&gt;</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2><B>Age</B>:  </FONT>
+			</P>
+			<UL>
+				<LI><P CLASS="western"><FONT SIZE=2>Rudolph Agnew , &lt;55 years
+				old&gt; </FONT>
+				</P>
+				<LI><P CLASS="western"><FONT SIZE=2>Neil Davenport, &lt;47&gt;</FONT></P>
+			</UL>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=1 STYLE="font-size: 8pt">SGML: 
+			&lt;TIMEX TYPE=&quot;DATE:AGE&quot;&gt;  &lt;/TIMEX&gt;</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2><B>Other</B>: periodic dates
+			(weekly, annually), terms indicating that something occurs
+			repeatedly/habitually, (over) the years, every day</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=1 STYLE="font-size: 8pt">SGML: 
+			&lt;TIMEX TYPE=&quot;DATE:OTHER&quot;&gt; &lt;/TIMEX&gt;</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2><B>Unmarked: </B>nowadays, now,
+			past / future, for now / until now, earlier, all the time / at the
+			same time</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=70>
+			<P CLASS="western"><FONT SIZE=2>Time</FONT></P>
+		</TD>
+		<TD WIDTH=244>
+			<P CLASS="western"><FONT SIZE=2>Markable: Any time ending with
+			A.M. or P.M.  The a.m. and p.m. must be tagged along with the
+			numbers.   Other times of day (units smaller than a day) and time
+			durations may be marked:  morning, noon, night, 3 hours.</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=1 STYLE="font-size: 8pt">SGML: 
+			&lt;TIMEX TYPE=&quot;TIME&quot;&gt; &lt;/TIMEX&gt;</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=370>
+			<P CLASS="western"><FONT SIZE=2>No Subtypes</FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=70>
+			<P CLASS="western"><FONT SIZE=2>Percent</FONT></P>
+		</TD>
+		<TD WIDTH=244>
+			<P CLASS="western"><FONT SIZE=2>Markable: Any percent.  Percent
+			symbol or the actual word percent must be explicit and included in
+			the extent.  Ex:  50%</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=1 STYLE="font-size: 8pt">SGML: 
+			&lt;NUMEX TYPE=&quot;PERCENT&quot;&gt; &lt;/NUMEX&gt;</FONT></P>
+		</TD>
+		<TD WIDTH=370>
+			<P CLASS="western"><FONT SIZE=2>No Subtypes</FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=70>
+			<P CLASS="western"><FONT SIZE=2>Money</FONT></P>
+		</TD>
+		<TD WIDTH=244>
+			<P CLASS="western"><FONT SIZE=2>Markable: Any monetary value
+			including all monetary denominations.  The monetary unit must be
+			explicit and included in the tagging.  Examples:  50 yen, one
+			million dollars, 17,000 pounds, $10.20.  Only values should be
+			tagged, generic references to money should not.  For example, in
+			&ldquo;money invested in&hellip;&rdquo;, there is no markup for
+			&ldquo;money&rdquo;.  In rate expressions such as $ per unit, the
+			unit should not be included in the extent.  For example, in &ldquo;$3
+			per share&rdquo;, the extent is &lt;$3&gt;.</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=1 STYLE="font-size: 8pt">SGML: 
+			&lt;NUMEX TYPE=&quot;MONEY&rdquo;&gt;  &lt;/NUMEX&gt;</FONT></P>
+		</TD>
+		<TD WIDTH=370>
+			<P CLASS="western"><FONT SIZE=2>No Subtypes</FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=70>
+			<P CLASS="western"><FONT SIZE=2>Quantity</FONT></P>
+		</TD>
+		<TD WIDTH=244>
+			<P CLASS="western"><FONT SIZE=2>Markable: Used to classify
+			measurements.  Ex:  4 miles, 4 grams, 4 degrees, 4 pounds, 4
+			ounces.</FONT></P>
+		</TD>
+		<TD WIDTH=370>
+			<P CLASS="western"><FONT SIZE=2><B>1d:</B> length, distance (3
+			miles, 2 feet, etc.)</FONT></P>
+			<UL>
+				<LI><P CLASS="western"><FONT SIZE=2>&lt;about 60 miles&gt;</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>&lt;six-inch&gt; concrete
+				walls</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>&lt;100-mile&gt; race</FONT></P>
+			</UL>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=1 STYLE="font-size: 8pt">SGML: 
+			&lt;NUMEX TYPE=&quot;QUANTITY:1D&quot;&gt;  &lt;/NUMEX&gt;</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2><B>2d:</B> area (2 square feet)</FONT></P>
+			<UL>
+				<LI><P CLASS="western"><FONT SIZE=2>&lt;250,000-square-foot&gt;
+				building</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>a &lt;132-acre&gt; tract</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>&lt;more than four acres&gt;</FONT></P>
+			</UL>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=1 STYLE="font-size: 8pt">SGML: 
+			&lt;NUMEX TYPE=&quot;QUANTITY:2D&quot;&gt;  &lt;/NUMEX&gt;</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2><B>3d:</B> volume (3 cubic meters,
+			etc.)</FONT></P>
+			<UL>
+				<LI><P CLASS="western"><FONT SIZE=2>a &lt;1.5 million-gallon&gt;
+				saltwater aquarium</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>&lt;1,296,800 barrels&gt; of
+				crude oil</FONT></P>
+			</UL>
+			<P CLASS="western" STYLE="margin-left: 0.25in"><BR>
+			</P>
+			<H2 CLASS="western"><FONT SIZE=1 STYLE="font-size: 8pt"><SPAN STYLE="font-weight: medium">SGML</SPAN>:
+			 <SPAN STYLE="font-weight: medium">&lt;NUMEX TYPE=&quot;QUANTITY:3D&quot;&gt;
+			 &lt;/NUMEX&gt;</SPAN></FONT></H2>
+			<H2 CLASS="western"><BR>
+			</H2>
+			<H2 CLASS="western"><FONT SIZE=2>Energy:</FONT></H2>
+			<UL>
+				<LI><P CLASS="western"><FONT SIZE=2>&lt;250-megawatt&gt; phase of
+				the project</FONT></P>
+			</UL>
+			<H2 CLASS="western" STYLE="font-weight: medium"><BR>
+			</H2>
+			<H2 CLASS="western"><FONT SIZE=1 STYLE="font-size: 8pt"><SPAN STYLE="font-weight: medium">SGML</SPAN>:
+			 <SPAN STYLE="font-weight: medium">&lt;NUMEX
+			TYPE=&quot;QUANTITY:ENERGY&quot;&gt;   &lt;/NUMEX&gt;</SPAN></FONT></H2>
+			<P CLASS="western"><BR>
+			</P>
+			<H2 CLASS="western"><FONT SIZE=2>Speed:</FONT></H2>
+			<UL>
+				<LI><P CLASS="western"><FONT SIZE=2>&lt;65 miles an hour&gt;</FONT></P>
+			</UL>
+			<H2 CLASS="western" STYLE="font-weight: medium"><BR>
+			</H2>
+			<H2 CLASS="western"><FONT SIZE=1 STYLE="font-size: 8pt"><SPAN STYLE="font-weight: medium">SGML</SPAN>:
+			 <SPAN STYLE="font-weight: medium">&lt;NUMEX
+			TYPE=&quot;QUANTITY:SPEED&quot;&gt;  &lt;/NUMEX&gt;</SPAN></FONT></H2>
+			<H2 CLASS="western"><BR>
+			</H2>
+			<H2 CLASS="western"><FONT SIZE=2>Temperature:</FONT></H2>
+			<UL>
+				<LI><H2 CLASS="western" STYLE="font-weight: medium"><FONT SIZE=2>&lt;minus
+				321 degrees Fahrenheit&gt;</FONT></H2>
+			</UL>
+			<P CLASS="western"><BR>
+			</P>
+			<H2 CLASS="western"><FONT SIZE=1 STYLE="font-size: 8pt"><SPAN STYLE="font-weight: medium">SGML</SPAN>:
+			 <SPAN STYLE="font-weight: medium">&lt;NUMEX
+			TYPE=&quot;QUANTITY:TEMPERATURE&quot;&gt; &lt;/NUMEX&gt;</SPAN></FONT></H2>
+			<H2 CLASS="western"><BR>
+			</H2>
+			<H2 CLASS="western"><FONT SIZE=2>Acceleration:</FONT></H2>
+			<H2 CLASS="western"><BR>
+			</H2>
+			<H2 CLASS="western"><FONT SIZE=2>Weight: </FONT>
+			</H2>
+			<UL>
+				<LI><P CLASS="western"><FONT SIZE=2>&lt;30,537 metric tons&gt;</FONT></P>
+			</UL>
+			<H2 CLASS="western" STYLE="font-weight: medium"><BR>
+			</H2>
+			<H2 CLASS="western"><FONT SIZE=1 STYLE="font-size: 8pt"><SPAN STYLE="font-weight: medium">SGML</SPAN>:
+			 <SPAN STYLE="font-weight: medium">&lt;NUMEX
+			TYPE=&quot;QUANTITY:WEIGHT&quot;&gt;  &lt;/NUMEX&gt;</SPAN></FONT></H2>
+			<H2 CLASS="western"><BR>
+			</H2>
+			<H2 CLASS="western"><FONT SIZE=2>Other:</FONT></H2>
+			<UL>
+				<LI><P CLASS="western"><FONT SIZE=2>&lt;40 megabyte&gt; hard
+				drives</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>&lt;32-bit&gt; chips</FONT></P>
+			</UL>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=1 STYLE="font-size: 8pt">SGML: 
+			&lt;NUMEX TYPE=&quot;QUANTITY:OTHER&quot;&gt;  &lt;/NUMEX&gt;  </FONT>
+			</P>
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=70>
+			<P CLASS="western"><FONT SIZE=2>Ordinal</FONT></P>
+		</TD>
+		<TD WIDTH=244>
+			<P CLASS="western"><FONT SIZE=2>Markable:  All ordinal numbers. 
+			Ex:  First, fourth, second</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=1 STYLE="font-size: 8pt">SGML: 
+			&lt;NUMEX TYPE=&quot;ORDINAL&quot;&gt;  &lt;/NUMEX&gt;</FONT></P>
+		</TD>
+		<TD WIDTH=370>
+			<P CLASS="western"><FONT SIZE=2>No Subtypes</FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=70>
+			<P CLASS="western"><FONT SIZE=2>Cardinal</FONT></P>
+		</TD>
+		<TD WIDTH=244>
+			<P CLASS="western"><FONT SIZE=2>Markable:  Numerals that provide a
+			count or quantity and do not fall under a unit of measurement,
+			money, percent, date or time.  Whole numbers, decimals and
+			fractions are included.  </FONT>
+			</P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2>Ex:  half, hundreds, one-third,
+			four, 4534.  Ex:  Nasdaq composite fill 1.39 to 451.37 - the
+			decimals are cardinals because there is no monetary unit.  </FONT>
+			</P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2>Headless numerical phrases are
+			also covered in this category.  Ex: &lsquo;reducing employment
+			from 18,000 to 16,000&rsquo;.  </FONT>
+			</P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2>Numbers identifying list items
+			should also be included.</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=1 STYLE="font-size: 8pt">SGML: 
+			&lt;NUMEX TYPE=&quot;CARDINAL&quot;&gt;&lt;/NUMEX&gt;</FONT></P>
+		</TD>
+		<TD WIDTH=370>
+			<P CLASS="western"><FONT SIZE=2>No Subtypes</FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=70>
+			<P CLASS="western"><FONT SIZE=2>Events</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2>Name</FONT></P>
+		</TD>
+		<TD WIDTH=244>
+			<P CLASS="western"><FONT SIZE=2>Markable:  Named hurricanes,
+			battles, wars, sports events, and other named events. Ex:  WWI,
+			WWII, New York City Marathon, Oklahoma City bombing, etc.</FONT></P>
+		</TD>
+		<TD WIDTH=370>
+			<P CLASS="western"><FONT SIZE=2><B>War</B>:</FONT></P>
+			<UL>
+				<LI><P CLASS="western"><FONT SIZE=2>the &lt;Mexican Revolution&gt;</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>the &lt;Vietnam War&gt;</FONT></P>
+			</UL>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=1 STYLE="font-size: 8pt">SGML: 
+			&lt;ENAMEX TYPE=&quot;EVENT:WAR&quot;&gt;  &lt;/ENAMEX&gt;</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2><B>Hurricane</B>:</FONT></P>
+			<UL>
+				<LI><P CLASS="western"><FONT SIZE=2>&lt;Hurricane Hugo&gt;</FONT></P>
+			</UL>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=1 STYLE="font-size: 8pt">SGML:
+			&lt;ENAMEX TYPE=&quot;EVENT:HURRICANE&quot;&gt;  &lt;/ENAMEX&gt;</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2><B>Other:  </B>sports events,
+			other named events</FONT></P>
+			<UL>
+				<LI><P CLASS="western"><FONT SIZE=2>the official &lt;Indianapolis
+				500&gt; announcer</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>A &lt;World Series&gt;
+				telecast</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>&lt;Senior Olympic games&gt;</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>the &lt;Koreagate&gt; scandal</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>the &lt;Tokyo Motor Show&gt;</FONT></P>
+			</UL>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=1 STYLE="font-size: 8pt">SGML:
+			&lt;ENAMEX TYPE=&quot;EVENT:OTHER&quot;&gt;  &lt;/ENAMEX&gt;</FONT></P>
+			<P><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=70>
+			<P CLASS="western"><FONT SIZE=2>Plant</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2>Name or Head of Descriptor</FONT></P>
+		</TD>
+		<TD WIDTH=244>
+			<P CLASS="western"><FONT SIZE=2>Markable:  Any plant, flower,
+			tree, etc.  Black eyed Susan, Peonies, Joshua Tree, cactus, grass,
+			etc.</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<UL>
+				<LI><P CLASS="western"><FONT SIZE=2>1989-90 &lt;crop&gt;</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>hybrid &lt;plants&gt;</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>an annual &lt;herb&gt; ,
+				&lt;Plantago ovata&gt;</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>selling &lt;flowers&gt;</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>pussy-willow &lt;buds&gt;</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>The &lt;grapevine&gt;</FONT></P>
+			</UL>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=1 STYLE="font-size: 8pt">SGML:
+			&lt;ENAMEX TYPE=&quot;PLANT&quot;&gt;   &lt;/ENAMEX&gt;</FONT></P>
+		</TD>
+		<TD WIDTH=370>
+			<P CLASS="western"><FONT SIZE=2>No Subtypes</FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=70>
+			<P CLASS="western"><FONT SIZE=2>Animal</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2>Name or Head of Descriptor</FONT></P>
+		</TD>
+		<TD WIDTH=244>
+			<P CLASS="western"><FONT SIZE=2>Markable:  Any animal class or
+			proper name of an animal, real or fictional.</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<UL>
+				<LI><P CLASS="western"><FONT SIZE=2>an elusive &lt;sheep&gt;</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>a docile &lt;butterfly&gt;</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>&lt;animals&gt; and
+				beneficial &lt;insects&gt;</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>his &lt;cuckoo&gt; 's egg</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>Could be &lt;Cuddles&gt;,
+				Mrs. Stinnett's &lt;dog&gt;.</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>keep the &lt;worm&gt; from
+				the apple</FONT></P>
+			</UL>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2><FONT SIZE=1 STYLE="font-size: 8pt">SGML</FONT>:
+			 <FONT SIZE=1 STYLE="font-size: 8pt">&lt;ENAMEX TYPE=&quot;ANIMAL&quot;&gt;
+			 &lt;/ENAMEX&gt;</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=370>
+			<P CLASS="western"><FONT SIZE=2>No Subtypes</FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=70>
+			<P CLASS="western"><FONT SIZE=2>Substance</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P><FONT SIZE=2>Name or Head of Descriptor</FONT></P>
+		</TD>
+		<TD WIDTH=244>
+			<P CLASS="western"><FONT SIZE=2>Markable:  Any chemicals,
+			elements, drugs, and foods.  Ex:  boron, penicillin, plutonium,
+			bananas etc. Also other materials.  Both names and descriptors are
+			markable.</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2>This category in particular has
+			been difficult to define and may overlap with other categories.  
+			See subtypes section for possible ambiguities and more examples.</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=370>
+			<P CLASS="western"><FONT SIZE=2><B>Food</B>: food and drinks </FONT>
+			</P>
+			<P CLASS="western"><FONT SIZE=2>Possible ambiguities:</FONT></P>
+			<UL>
+				<LI><P CLASS="western"><FONT SIZE=2>Food vs Animal &ndash;
+				Refence to the animal is markable as Animal but reference to the
+				food is Substance:Food</FONT></P>
+				<UL>
+					<LI><P CLASS="western"><FONT SIZE=2>&lt;beef&gt; (marked
+					Substance:Food)</FONT></P>
+					<LI><P CLASS="western"><FONT SIZE=2>&lt;cow&gt; (marked Animal)</FONT></P>
+				</UL>
+			</UL>
+			<P CLASS="western"><BR>
+			</P>
+			<UL>
+				<LI><P CLASS="western"><FONT SIZE=2>Food vs Product - Product
+				names for foods are markable as Product, not Substance, but
+				references to the foods themselves are Substance:Food</FONT></P>
+				<UL>
+					<LI><P><FONT SIZE=2>their breakfast &lt;cereals&gt; (marked
+					Substance:Food)</FONT></P>
+					<LI><P><FONT SIZE=2>&lt;Corn Flakes&gt; (marked Product)</FONT></P>
+				</UL>
+			</UL>
+			<P CLASS="western" STYLE="margin-left: 0.25in"><BR>
+			</P>
+			<UL>
+				<LI><P CLASS="western"><FONT SIZE=2>Food vs Plant - </FONT>
+				</P>
+				<UL>
+					<LI><P CLASS="western"><FONT SIZE=2>20 more &lt;corn&gt; than
+					naturally pollinated plants (marked Plant)</FONT></P>
+					<LI><P CLASS="western"><FONT SIZE=2>$ 2.15 a bushel for &lt;corn&gt;</FONT></P>
+				</UL>
+			</UL>
+			<P CLASS="western"><BR>
+			</P>
+			<UL>
+				<LI><P CLASS="western"><FONT SIZE=2>Other Examples</FONT></P>
+			</UL>
+			<UL>
+				<UL>
+					<LI><P CLASS="western"><FONT SIZE=2>&lt;Champagne&gt; and
+					&lt;dessert&gt; followed</FONT></P>
+					<LI><P CLASS="western"><FONT SIZE=2>&lt;food&gt; and &lt;drinks&gt;
+					are banned</FONT></P>
+					<LI><P CLASS="western"><FONT SIZE=2>duckling &lt;mousseline&gt;,
+					lobster &lt;consomme&gt;, veal &lt;mignon&gt;       </FONT>
+					</P>
+					<LI><P CLASS="western"><FONT SIZE=2>chocolate &lt;terrine&gt;
+					with a raspberry &lt;sauce&gt;</FONT></P>
+				</UL>
+			</UL>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=1 STYLE="font-size: 8pt">SGML:
+			&lt;ENAMEX TYPE=&quot;SUBSTANCE:FOOD&quot;&gt;  &lt;/ENAMEX&gt;</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2><B>Drug</B>: medicines, narcotics,
+			etc.</FONT></P>
+			<UL>
+				<LI><P CLASS="western"><FONT SIZE=2>approval for a new &lt;drug&gt;</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>The &lt;drug&gt; , called
+				&lt;adenocard&gt;</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>the antibiotic &lt;products&gt;</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>trade some of it for
+				&lt;cocaine&gt;</FONT></P>
+			</UL>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"> <FONT SIZE=2><FONT SIZE=1 STYLE="font-size: 8pt">SGML:
+			&lt;ENAMEX TYPE=&quot;SUBSTANCE:DRUG&quot;&gt;  &lt;/ENAMEX&gt;</FONT></FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2><B>Nuclear</B>: nuclear material</FONT></P>
+			<UL>
+				<LI><P CLASS="western"><FONT SIZE=2>&lt;titanium&gt;</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>&lt;plutonium&gt;</FONT></P>
+			</UL>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=1 STYLE="font-size: 8pt">SGML: 
+			&lt;ENAMEX TYPE=&quot;SUBSTANCE:NUCLEAR&quot;&gt;   &lt;/ENAMEX&gt;</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2><B>Chemical</B>: Copper, elements
+			from the periodic table, gold, silver</FONT></P>
+			<UL>
+				<LI><P CLASS="western"><FONT SIZE=2>class of &lt;asbestos&gt;
+				including &lt;crocidolite&gt;</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>&lt;copper&gt;</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>10 drop in &lt;ozone&gt;</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>products derived from &lt;salt&gt;
+				, such as &lt;chlorine&gt; and caustic &lt;soda&gt;</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>&lt;chemicals&gt; </FONT>
+				</P>
+			</UL>
+			<P CLASS="western" STYLE="margin-left: 0.25in"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=1 STYLE="font-size: 8pt">SGML: 
+			&lt;ENAMEX TYPE=&quot;SUBSTANCE:CHEMICAL&quot;&gt;  &lt;/ENAMEX&gt;</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2><B>Other</B>:	blood, cholesterol,
+			gas, lipoproteins, oil, pulp, water (not intended for drinking),
+			tobacco, butterfat, dna, plastics, coal, ice, toxins, stones,
+			diamonds, etc.</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=1 STYLE="font-size: 8pt">SGML: 
+			&lt;ENAMEX TYPE=&quot;SUBSTANCE:OTHER&quot;&gt;  &lt;/ENAMEX&gt;</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=70>
+			<P CLASS="western"><FONT SIZE=2>Disease</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2>Name or Head of Descriptor</FONT></P>
+		</TD>
+		<TD WIDTH=244>
+			<P CLASS="western"><FONT SIZE=2>Markable:  Any disease or medical
+			condition, Ex:  Hodgkin&rsquo;s disease, AIDS, cancer, malaria,
+			acne.</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<UL>
+				<LI><P CLASS="western"><FONT SIZE=2>18 deaths from malignant
+				&quot;&lt;mesothelioma&gt;, lung &lt;cancer&gt; and &lt;asbestosis&gt;</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>asbestos-related &lt;diseases&gt;</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>help treat juvenile
+				&lt;diabetes&gt;</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>suffered from &lt;malnutrition&gt;</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>died after a &lt;stroke&gt;</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>suffering from &lt;depression&gt;</FONT></P>
+			</UL>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2>For this category, both names and
+			heads of descriptors are markable.</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2><FONT SIZE=1 STYLE="font-size: 8pt">SGML</FONT>:
+			<FONT SIZE=1 STYLE="font-size: 8pt">&lt;ENAMEX TYPE=&quot;DISEASE&quot;&gt;
+			&lt;/ENAMEX&gt;</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=370>
+			<P CLASS="western"><FONT SIZE=2>No Subtypes</FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=70>
+			<P CLASS="western"><FONT SIZE=2>Work of Art</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2>Name</FONT></P>
+		</TD>
+		<TD WIDTH=244>
+			<P CLASS="western"><FONT SIZE=2>Markable:  Titles of books, songs,
+			and other creations.  Usually surrounded by quotation marks in the
+			article (though the quotations are not included in the
+			annotation).  Ex:  Empire Strikes Back, The Bible, Blue Moon. 
+			Also includes awards.  Nobel Peace Prize, Emmy, Oscar. </FONT>
+			</P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2>Only names are markable in this
+			category.</FONT></P>
+			<P CLASS="western"><FONT SIZE=2>Newspaper headlines should only be
+			marked if they are referential.  In other words the headline of
+			the article being annotated should not be marked but if in the
+			body of the text here is a reference to an article, then it is
+			markable as a work of art.</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=370>
+			<H2 CLASS="western"><FONT SIZE=2>Book: </FONT>
+			</H2>
+			<UL>
+				<LI><P CLASS="western"><FONT SIZE=2>Dashiell Hammett, who wrote
+				`` &lt;The Maltese Falcon&gt;</FONT></P>
+			</UL>
+			<P CLASS="western" STYLE="margin-left: 0.25in"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=1 STYLE="font-size: 8pt">SGML: 
+			&lt;ENAMEX TYPE=&quot;WORK_OF_ART:BOOK&quot;&gt;   &lt;/ENAMEX&gt;</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<H2 CLASS="western"><FONT SIZE=2>Play:<SPAN STYLE="font-weight: medium">
+			</SPAN></FONT>
+			</H2>
+			<H2 CLASS="western" STYLE="margin-left: 0.25in; font-weight: medium">
+			<FONT SIZE=2>Operas, musicals, plays</FONT></H2>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=1 STYLE="font-size: 8pt">SGML: 
+			&lt;ENAMEX TYPE=&quot;WORK_OF_ART:PLAY&quot;&gt;   &lt;/ENAMEX&gt;</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2><B>Song:</B> </FONT>
+			</P>
+			<P CLASS="western" STYLE="margin-left: 0.25in"><FONT SIZE=2>Songs,
+			instrumental music</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=1 STYLE="font-size: 8pt">SGML: 
+			&lt;ENAMEX TYPE=&quot;WORK_OF_ART:SONG&quot;&gt;   &lt;/ENAMEX&gt;</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2><B>Painting:  </B></FONT>
+			</P>
+			<UL>
+				<LI><P CLASS="western"><FONT SIZE=2>Vincent van Gogh's ``
+				&lt;Irises&gt;</FONT></P>
+			</UL>
+			<P CLASS="western" STYLE="margin-left: 0.25in"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=1 STYLE="font-size: 8pt">SGML: 
+			&lt;ENAMEX TYPE=&quot;WORK_OF_ART:PAINTING&quot;&gt;  &lt;/ENAMEX&gt;</FONT></P>
+			<P CLASS="western" STYLE="margin-left: 0.25in"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2><B>Sculpture:  </B></FONT>
+			</P>
+			<P CLASS="western"><FONT SIZE=1 STYLE="font-size: 8pt">SGML: 
+			&lt;ENAMEX TYPE=&quot;WORK_OF_ART:SCULPTURE &quot;&gt;  &lt;/ENAMEX&gt;</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2><B>Other</B>: TV shows, movies,
+			awards<FONT SIZE=1 STYLE="font-size: 8pt"> </FONT></FONT>
+			</P>
+			<UL>
+				<LI><P CLASS="western"><FONT SIZE=2>&lt;Nobel Prize&gt;</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>a spin-off of `` &lt;Cosby&gt;<FONT SIZE=1 STYLE="font-size: 8pt">
+				</FONT></FONT>
+				</P>
+			</UL>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=1 STYLE="font-size: 8pt">SGML: 
+			&lt;ENAMEX TYPE=&quot;WORK_OF_ART:OTHER&quot;&gt;   &lt;/ENAMEX&gt;</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+	</TR>
+</TABLE>
+<P CLASS="western"><BR>
+</P>
+<TABLE WIDTH=728 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=7 CELLSPACING=0>
+	<COL WIDTH=70>
+	<COL WIDTH=244>
+	<COL WIDTH=370>
+	<TR VALIGN=TOP>
+		<TD WIDTH=70>
+			<P CLASS="western"><FONT SIZE=2>Law</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2>Name</FONT></P>
+		</TD>
+		<TD WIDTH=244>
+			<P CLASS="western"><FONT SIZE=2>Markable: Any document that has
+			been made into a law.  Ex:  Bill of Rights, Equal Rights
+			Amendments, IRS code 4.  The law must be named.  Legal documents
+			and sections and chapters of legal documents. Treaties.</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2>Examples:</FONT></P>
+			<UL>
+				<LI><P CLASS="western"><FONT SIZE=2>The &lt;1988 trade act&gt;</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>the so-called special &lt;301
+				provision&gt; of the act</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>the &lt;Johnson Act&gt;</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>&lt;Article II of the
+				Constitution&gt;</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>the &lt;Warsaw Pact&gt;</FONT></P>
+			</UL>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2><FONT SIZE=1 STYLE="font-size: 8pt">SGML</FONT>:
+			 <FONT SIZE=1 STYLE="font-size: 8pt">&lt;ENAMEX TYPE=&quot;LAW&quot;&gt;
+			 &lt;/ENAMEX&gt;</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=370>
+			<P CLASS="western"><FONT SIZE=2>No Subtypes</FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=70>
+			<P CLASS="western"><FONT SIZE=2>Language</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2>Name</FONT></P>
+		</TD>
+		<TD WIDTH=244>
+			<P CLASS="western"><FONT SIZE=2>Markable:  Any named language.</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2>Examples:</FONT></P>
+			<UL>
+				<LI><P CLASS="western"><FONT SIZE=2>&lt;Latin&gt; liturgy</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>novelistic tradition in
+				&lt;Arabic&gt;</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>speaking &lt;Filipino&gt;</FONT></P>
+			</UL>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2><FONT SIZE=1 STYLE="font-size: 8pt">SGML</FONT>:
+			 <FONT SIZE=1 STYLE="font-size: 8pt">&lt;ENAMEX TYPE=&quot;LANGUAGE&quot;&gt;
+			 &lt;/ENAMEX&gt;</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=370>
+			<P CLASS="western"><FONT SIZE=2>No Subtypes</FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=70>
+			<P CLASS="western"><FONT SIZE=2>Contact info</FONT></P>
+		</TD>
+		<TD WIDTH=244>
+			<P CLASS="western"><FONT SIZE=2>Markable: Address, email, phone #,
+			URL.</FONT></P>
+			<P><FONT SIZE=2>See subtypes for examples.</FONT></P>
+		</TD>
+		<TD WIDTH=370>
+			<P><FONT SIZE=2><B>Address: </B></FONT>
+			</P>
+			<UL>
+				<LI><P><FONT SIZE=2>&lt;153 East 53rd St.&gt;</FONT></P>
+			</UL>
+			<P STYLE="margin-left: 0.25in"><BR>
+			</P>
+			<P><FONT SIZE=2><FONT SIZE=1 STYLE="font-size: 8pt">SGML</FONT>:
+			<FONT SIZE=1 STYLE="font-size: 8pt">&lt;ENAMEX
+			TYPE=&quot;CONTACT_INFO:ADDRESS&quot;&gt;  &lt;/ENAMEX&gt;</FONT></FONT></P>
+			<P><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2><B>Email: </B></FONT>
+			</P>
+			<P CLASS="western"><FONT SIZE=2><FONT SIZE=1 STYLE="font-size: 8pt">SGML</FONT>:
+			<FONT SIZE=1 STYLE="font-size: 8pt">&lt;ENAMEX
+			TYPE=&quot;CONTACT_INFO:EMAIL&quot;&gt;  &lt;/ENAMEX&gt;</FONT></FONT></P>
+			<P CLASS="western" STYLE="margin-left: 0.25in"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2><B>Phone #:  </B></FONT>
+			</P>
+			<UL>
+				<LI><P CLASS="western"><FONT SIZE=2>&lt;extension 29&gt;</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>&lt;900-TELELAW&gt;</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>&lt;800-462-9029&gt;</FONT></P>
+			</UL>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=1 STYLE="font-size: 8pt">SGML:
+			&lt;ENAMEX TYPE=&quot;CONTACT_INFO:PHONE&quot;&gt; &lt;/ENAMEX&gt;</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2><B>URL:  </B></FONT>
+			</P>
+			<UL>
+				<LI><P CLASS="western"><FONT SIZE=2>&lt;www.usabanc.com&gt;</FONT></P>
+			</UL>
+			<P CLASS="western" STYLE="margin-left: 0.25in"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2><FONT SIZE=1 STYLE="font-size: 8pt">SGML</FONT>:
+			<FONT SIZE=1 STYLE="font-size: 8pt">&lt;ENAMEX
+			TYPE=&quot;CONTACT_INFO:url&quot;&gt;  &lt;/ENAMEX&gt;</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=70>
+			<P CLASS="western"><FONT SIZE=2>Game</FONT></P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2>Name or</FONT></P>
+			<P CLASS="western"><FONT SIZE=2>Head of Descriptor</FONT></P>
+		</TD>
+		<TD WIDTH=244>
+			<P CLASS="western"><FONT SIZE=2>Markable: Any named game such as a
+			board game, any descriptor head, or any game type such as
+			&ldquo;baseball&rdquo;.  </FONT>
+			</P>
+			<P CLASS="western"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2>Examples:</FONT></P>
+			<UL>
+				<LI><P CLASS="western"><FONT SIZE=2>&lt;tennis&gt;</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>&lt;football&gt;</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>&lt;poker&gt;</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>&lt;Pachinko&gt;, a kind of
+				&lt;pinball&gt;</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>&lt;paddleball&gt;</FONT></P>
+				<LI><P CLASS="western"><FONT SIZE=2>&lt;Pool&gt;</FONT></P>
+			</UL>
+			<P CLASS="western" STYLE="margin-left: 0.25in"><BR>
+			</P>
+			<P CLASS="western"><FONT SIZE=2><FONT SIZE=1 STYLE="font-size: 8pt">SGML</FONT>:
+			<FONT SIZE=1 STYLE="font-size: 8pt">&lt;ENAMEX TYPE=&quot;GAME&quot;&gt;
+			 &lt;/ENAMEX&gt;</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=370>
+			<P CLASS="western"><FONT SIZE=2>No Subtypes</FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P CLASS="western"><BR>
+</P>
+<P CLASS="western"><FONT SIZE=2>GENERAL GUIDELINES</FONT></P>
+<P CLASS="western"><BR>
+</P>
+<OL>
+	<LI><P CLASS="western"><FONT SIZE=2>Markables/Extents</FONT></P>
+</OL>
+<P CLASS="western"><BR>
+</P>
+<P CLASS="western"><FONT SIZE=2>Mark head words for descriptor
+categories and full name for name name categories.  For time and
+number categories, mark the full time, date, or quantity expression,
+regardless of context.  The following examples should be marked in
+their entirety:  2 feet, 3 hours, 5 days ago, etc.</FONT></P>
+<P CLASS="western"><BR>
+</P>
+<P CLASS="western"><FONT SIZE=2>For descriptors we generally mark
+only one head word.  But there are cases in which the head is not
+sufficient.  The marked head should convey the meaning of the phrase
+so that it captures the difference between &ldquo;vice president&rdquo;
+and &ldquo;president&rdquo; for example. In these cases, the head
+should include the information necessary to distinguish its meaning. 
+So in the above example, &lt;vice president&gt; (rather than just
+&ldquo;president&rdquo;) is markable as the head of &ldquo;vice
+president of accounting&rdquo; because a vice president and a
+president are not equivalent.</FONT></P>
+<P CLASS="western"><BR>
+</P>
+<P CLASS="western"><FONT SIZE=2>In the case of conjunctions, mark one
+entity per head word.  However, in the case of range expressions for
+times, dates and numerical categories (like &ldquo;between two and 3
+weeks&rdquo;), mark the entire expression.</FONT></P>
+<P CLASS="western"><BR>
+</P>
+<P CLASS="western"><FONT SIZE=2>Proper premodifiers are markable. 
+Some non-proper premodifiers are markable.  See section 2 for
+clarification.</FONT></P>
+<P CLASS="western"><BR>
+</P>
+<OL START=2>
+	<LI><P CLASS="western"><FONT SIZE=2>Non-proper Premodifiers</FONT></P>
+</OL>
+<P CLASS="western"><FONT SIZE=2>When a premodifier is a common noun,
+it should generally not be marked.  The exceptions are as follows:</FONT></P>
+<P CLASS="western"><BR>
+</P>
+<OL>
+	<UL>
+		<LI><P CLASS="western"><FONT SIZE=2>Occupational titles as in
+		&ldquo;president Bush&rdquo;, &ldquo;co-founder Gates&rdquo;, &ldquo;
+		senator Bentsen&rdquo;, etc.  Do not include modifiers of those
+		occupational premodifiers in the extent.  For example, in
+		&ldquo;Bankruptcy Judge Jones&rsquo;, only the extents &ldquo;Judge&rdquo;
+		and &ldquo;Jones&rdquo; are markable as person descriptor and
+		person name, respectively.</FONT></P>
+	</UL>
+</OL>
+<P CLASS="western"><BR>
+</P>
+<OL>
+	<UL>
+		<LI><P CLASS="western"><FONT SIZE=2>Nominalizations of clause-like
+		structures whose object is a category of interest.  For example,
+		&ldquo;heroin smuggler&rdquo; is a nominalization of X smuggles
+		heroin.  In this case we would want to mark &ldquo;heroin&rdquo;. 
+		On the other hand, &ldquo;company funds&rdquo; is not a
+		nominalization of X funds company, so we do not mark &ldquo;company&rdquo;.</FONT></P>
+	</UL>
+</OL>
+<P CLASS="western"><BR>
+</P>
+<OL>
+	<UL>
+		<LI><P CLASS="western"><FONT SIZE=2>Timex and Numex expressions in
+		premodifier position should also be marked.</FONT></P>
+	</UL>
+</OL>
+<P CLASS="western"><BR>
+</P>
+<OL>
+	<UL>
+		<LI><P CLASS="western"><FONT SIZE=2>Possessives should be marked in
+		premodifier position:  in &ldquo;the company&rsquo;s meeting&rdquo;,
+		&ldquo;the company&rdquo; should be marked</FONT></P>
+	</UL>
+</OL>
+<P CLASS="western"><BR>
+</P>
+<P CLASS="western" STYLE="margin-left: 0.5in"><BR>
+</P>
+<OL START=3>
+	<LI><P CLASS="western"><FONT SIZE=2>Unmarkables</FONT></P>
+</OL>
+<P CLASS="western" STYLE="margin-left: 0.25in"><BR>
+</P>
+<P CLASS="western"><FONT SIZE=2>Pronouns and pronominal elements like
+anaphoric &ldquo;one&rdquo;, &ldquo;someone&rdquo;, &ldquo;everyone&rdquo;,
+&ldquo;others&rdquo;, etc. are not markable.  </FONT>
+</P>
+<P CLASS="western"><BR>
+</P>
+<P CLASS="western"><FONT SIZE=2>Headless entities with no clear
+reference like &ldquo;the best&rdquo; are not markable.  </FONT>
+</P>
+<P CLASS="western"><BR>
+</P>
+<P CLASS="western"><FONT SIZE=2>Names embedded in atomic names are
+not markable.  Ex:  no markup for Dow Jones in &ldquo;Dow Jones
+Industrial Average&rdquo;</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=2>Generics and specifics
+are not distinguished.  All references should be marked.  For
+example, in &ldquo;scientists often say&hellip;,&rdquo; &ldquo;scientists&rdquo;
+is markable even though it is generic.</FONT></P>
+<P CLASS="western"><BR>
+</P>
+</BODY>
+</HTML>
