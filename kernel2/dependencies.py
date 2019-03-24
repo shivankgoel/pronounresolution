@@ -3,9 +3,9 @@ from spacy.pipeline import DependencyParser
 import spacy
 from nltk import Tree
 
+import os
+import gc
 
-from embedding_features import embedding_features
-from position_features import position_features
 import numpy as np
 
 import pandas as pd

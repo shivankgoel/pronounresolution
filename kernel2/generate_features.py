@@ -1,5 +1,6 @@
 from dependencies import *
 from position_features import *
+from embedding_features import *
 
 num_embed_features = 11
 embed_dim = 300

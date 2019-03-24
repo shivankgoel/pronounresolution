@@ -37,4 +37,9 @@ pb_pos_dev = create_dist_features(dev_df, 'Text', 'Pronoun-offset', 'B-offset')
 pb_pos_test = create_dist_features(test_df, 'Text', 'Pronoun-offset', 'B-offset')
 
 
+'''
+len(pa_pos_tra) = 2000
+pa_pos_tra[0].shape = (45,)
+We have 45 position features.
+'''
 

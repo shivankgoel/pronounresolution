@@ -1,7 +1,5 @@
 from dependencies import *
 
-nlp = spacy.load('en_core_web_lg')
-
 
 def to_nltk_tree(node):
     if node.n_lefts + node.n_rights > 0:
