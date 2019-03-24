@@ -3,7 +3,28 @@ from spacy.pipeline import DependencyParser
 import spacy
 from nltk import Tree
 
+
+from embedding_features import embedding_features
+from position_features import position_features
+import numpy as np
+
+import pandas as pd
+
 nlp = spacy.load('en_core_web_lg')
+
+def bs(list_, target_):
+    lo, hi = 0, len(list_) -1
+    
+    while lo < hi:
+        mid = lo + int((hi - lo) / 2)
+        
+        if target_ < list_[mid]:
+            hi = mid
+        elif target_ > list_[mid]:
+            lo = mid + 1
+        else:
+            return mid + 1
+    return lo
 
 
 def bs_(list_, target_):

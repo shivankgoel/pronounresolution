@@ -1,12 +1,5 @@
-from spacy.lang.en import English
-from spacy.pipeline import DependencyParser
-import spacy
-from nltk import Tree
-from embeeding_features import embedding_features
-from position_features import position_features
-import numpy as np
-
-nlp = spacy.load('en_core_web_lg')
+from dependencies import *
+from position_features import *
 
 num_embed_features = 11
 embed_dim = 300
