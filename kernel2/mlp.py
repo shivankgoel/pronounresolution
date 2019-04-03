@@ -23,11 +23,6 @@ class mlpmodel(nn.Module):
 		return outs
 
 
-model = mlpmodel()
-opt = torch.optim.Adam(model.parameters())
-criterion = nn.CrossEntropyLoss()
-
-
 '''
 Test data
 
@@ -45,12 +40,36 @@ dev_data = [torch.tensor(x,dtype=torch.float) for x in [p_emb_dev,a_emb_dev,b_em
 train_data = [torch.tensor(x,dtype=torch.float) for x in [p_emb_tra,a_emb_tra,b_emb_tra,pa_pos_tra,pb_pos_tra]]
 test_data = [torch.tensor(x,dtype=torch.float) for x in [p_emb_test,a_emb_test,b_emb_test,pa_pos_test,pb_pos_test]]
 
+y_tra = torch.tensor(y_tra)
+y_dev = torch.tensor(y_dev)
+y_test = torch.tensor(y_test)
 
+
+
+model = mlpmodel()
+opt = torch.optim.Adam(model.parameters())
+criterion = nn.CrossEntropyLoss()
+
+num_epochs = 500
+
+for i in range(num_epochs):
+	opt.zero_grad()
+	outputs = model([train_data[0],train_data[1],train_data[2]],[train_data[3],train_data[4]])
+	loss = criterion(outputs, y_tra)
+	loss.backward()
+	opt.step()
+	if i%10==0:
+		print('Epoch: %4f Loss : %4f'%(i,loss))
+
+
+model.eval()
+dev_outputs = model([dev_data[0],dev_data[1],dev_data[2]],[dev_data[3],dev_data[4]])
+predicted_labels = torch.max(dev_outputs,1)[1]
+acc = np.sum(np.array(predicted_labels) == y_dev.values)/len(y_dev)
 
 #savethemodel
 # def save_checkpoint(filename, **states):
 #    torch.save(states, filename)
-
 # utils.save_checkpoint('model_mlp.pth.tar', **{'model' : model.state_dict(), 'opt' : opt.state_dict()})
 
 
