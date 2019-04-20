@@ -2,3 +2,7 @@ In the kaggle dataset:
 {'her': 534, 'His': 33, 'his': 496, 'She': 179, 'she': 249, 'him': 98, 'He': 138, 'Her': 38, 'he': 235}
 total fem: 1197
 total mal: 1000
+
+{'he': 3179, 'He': 1035, 'his': 1989, 'him': 395, 'She': 133, 'she': 505, 'her': 479, 'His': 129, 'Her': 32, 'Him': 0}
+total male: 6727
+female:1149

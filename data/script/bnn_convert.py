@@ -29,6 +29,7 @@ with open("../bbn-pcet/data/BBN-wsj-pronouns/WSJ.pron") as f:
                     pronoun[word] = pronoun[word] + 1
                 else:
                     pronoun[word] = 1
+        print(pronoun)
 '''
 data_inputs = []
 with open("../bbn-pcet/data/BBN-wsj-pronouns/WSJ.pron") as f:
