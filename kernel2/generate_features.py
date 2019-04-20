@@ -6,21 +6,27 @@ num_embed_features = 11
 embed_dim = 300
 
 
+df = pd.read_csv('/Users/shivankgoel/Desktop/Projects/Projects/ALT/glove.840B.300d.txt', sep=" ", quoting=3, header=None, index_col=0)
+glovemodel = {key: val.values for key, val in df.T.items()}
+
 from gensim.models import KeyedVectors
-model23 = KeyedVectors.load_word2vec_format('/Users/shivankgoel/Desktop/Projects/Projects/ALT/GoogleNews-vectors-negative300-hard-debiased.bin', binary=True)
-model = KeyedVectors.load_word2vec_format('/Users/shivankgoel/Desktop/Projects/Projects/ALT/GoogleNews-vectors-negative300.bin', binary=True)
+#modeldebiased = KeyedVectors.load_word2vec_format('/Users/shivankgoel/Desktop/Projects/Projects/ALT/GoogleNews-vectors-negative300-hard-debiased.bin', binary=True)
+#modelsimple = KeyedVectors.load_word2vec_format('/Users/shivankgoel/Desktop/Projects/Projects/ALT/GoogleNews-vectors-negative300.bin', binary=True)
 
+model = glovemodel
 
-def give_my_embedding(word,gendered=False,embed_dim=300):
+def give_my_embedding(word,gendered=True,embed_dim=300):
     if word is None:
         return np.zeros((embed_dim,))
     elif not gendered:
         return word.vector
-    elif word in model:
-        return model[word]
+    elif word.text in model:
+        return np.float32(model[word.text])
     else:
-        return np.zeros((embed_dim,))
+        return np.float32(np.zeros((embed_dim,)))
 
+
+#list(give_my_embedding(nlp(word),False)) == list(np.float32(give_my_embedding('cat')))
 
 
 def create_embedding_features(df, text_column, offset_column):
