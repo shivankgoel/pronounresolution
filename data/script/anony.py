@@ -149,9 +149,11 @@ with open('../kaggle/gap-development.tsv') as tsvfile:
         test(tmp)
         data.append(tmp)
 
-with open("anonymous_kaggle.tsv", "w") as record_file:
-    record_file.write("ID	Text	Pronoun	Pronoun-offset	A	A-offset	A-coref	B	B-offset	B-coref	URL\n")
+with open('anonymous_kaggle.tsv', mode='w') as csv_file:
+    fieldnames = ['ID','Text','Pronoun','Pronoun-offset','A','A-offset','A-coref','B','B-offset','B-coref','URL']
+    writer = csv.DictWriter(csv_file, fieldnames=fieldnames,dialect='excel-tab')
+    writer.writeheader()
     for record in data:
-        record_file.write(record.id+"  "+record.text+"  "+ record.pronoun+
-        " "+str(record.pronoun_offset)+" "+record.a+" "+str(record.a_offset)+" "+record.a_coref+" "+
-        record.b+" "+str(record.b_offset)+" "+record.b_coref+" "+record.url + "\n")
+        writer.writerow({'ID':record.id,'Text': record.text, 'Pronoun': record.pronoun, 'Pronoun-offset': str(record.pronoun_offset),
+        'A':record.a, 'A-offset':str(record.a_offset),'A-coref':record.a_coref,
+        'B':record.b, 'B-offset':str(record.b_offset),'B-coref':record.b_coref,'URL':record.url})

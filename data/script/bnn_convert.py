@@ -1,6 +1,7 @@
 #filter WSJ.pron
 import re
 import json
+import csv
 #pronoun  = {}
 
 lst = ['her','His', 'his','She', 'she', 'Him','him','He','Her', 'he']
@@ -8,30 +9,8 @@ lst = ['her','His', 'his','She', 'she', 'Him','him','He','Her', 'he']
 flag  = 0
 Antecedent = ""
 pronoun = ""
-#data statistics
-'''
-with open("../bbn-pcet/data/BBN-wsj-pronouns/WSJ.pron") as f:
-    for content in f:
-        content  = content.rstrip()
-        content  = content.rstrip(" ")
-        content  = re.sub('\s+',' ',content)
-        if(content[0:4]=="(WSJ"):
-            flag = flag + 1
-        elif(conten't[0:11]==" Antecedent"):
-            Antecedent = content
-        elif(content[0:8]==" Pronoun"):
-            pos = content.rfind('>')
-            word = content[pos+1:]
-            word  = word [1:]
-            if word in lst:
-                print(word)
-                if word in pronoun.keys():
-                    pronoun[word] = pronoun[word] + 1
-                else:
-                    pronoun[word] = 1
-        print(pronoun)
-'''
 data_inputs = []
+
 with open("../bbn-pcet/data/BBN-wsj-pronouns/WSJ.pron") as f:
     for content in f:
         content  = content.rstrip()
@@ -96,8 +75,16 @@ for i in data_inputs:
     temp.append(A_offset[1].split("-")[0])
     data_outputs.append(temp)
 
-with open('WSJ.json', 'w') as outfile:
-    json.dump(data_outputs, outfile)
+
+with open('bnn_original.csv', mode='w') as csv_file:
+    fieldnames = ['Text','Pronoun','Pronoun-offset','A','A-offset']
+    writer = csv.DictWriter(csv_file, fieldnames=fieldnames,dialect='excel-tab')
+    writer.writeheader()
+    for record in data_outputs:
+        writer.writerow({'Text': record[0], 'Pronoun': record[1], 'Pronoun-offset': record[2], 'A':record[3], 'A-offset':record[4]})
+
+#with open('WSJ.json', 'w') as outfile:
+#    json.dump(data_outputs, outfile)
 
 #[1296, 'S66:10-10', 'Smith', 'S68:1-1', 'He']
 #Text Pronoun	Pronoun-offset	A	A-offset
