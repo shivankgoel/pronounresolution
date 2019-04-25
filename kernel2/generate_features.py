@@ -1,15 +1,26 @@
-from spacy.lang.en import English
-from spacy.pipeline import DependencyParser
-import spacy
-from nltk import Tree
-from embeeding_features import embedding_features
-from position_features import position_features
-import numpy as np
-
-nlp = spacy.load('en_core_web_lg')
+from dependencies import *
+from position_features import *
+from embedding_features import *
 
 num_embed_features = 11
 embed_dim = 300
+
+
+from gensim.models import KeyedVectors
+model23 = KeyedVectors.load_word2vec_format('/Users/shivankgoel/Desktop/Projects/Projects/ALT/GoogleNews-vectors-negative300-hard-debiased.bin', binary=True)
+model = KeyedVectors.load_word2vec_format('/Users/shivankgoel/Desktop/Projects/Projects/ALT/GoogleNews-vectors-negative300.bin', binary=True)
+
+
+def give_my_embedding(word,gendered=False,embed_dim=300):
+    if word is None:
+        return np.zeros((embed_dim,))
+    elif not gendered:
+        return word.vector
+    elif word in model:
+        return model[word]
+    else:
+        return np.zeros((embed_dim,))
+
 
 
 def create_embedding_features(df, text_column, offset_column):
@@ -23,30 +34,30 @@ def create_embedding_features(df, text_column, offset_column):
             text_offset[0], text_offset[1])
 
         feature_index = 0
-        embed_feature_matrix[text_offset_index, feature_index, :] = mention.vector
+        embed_feature_matrix[text_offset_index, feature_index, :] = give_my_embedding(mention)
         feature_index += 1
-        embed_feature_matrix[text_offset_index, feature_index, :] = parent.vector
+        embed_feature_matrix[text_offset_index, feature_index, :] = give_my_embedding(parent)
         feature_index += 1
-        embed_feature_matrix[text_offset_index, feature_index, :] = first_word.vector
+        embed_feature_matrix[text_offset_index, feature_index, :] = give_my_embedding(first_word)
         feature_index += 1
-        embed_feature_matrix[text_offset_index, feature_index, :] = last_word.vector
+        embed_feature_matrix[text_offset_index, feature_index, :] = give_my_embedding(last_word)
         feature_index += 1
         embed_feature_matrix[text_offset_index, feature_index:feature_index + 2, :] = np.asarray(
-            [token.vector if token is not None else np.zeros((embed_dim,)) for token in precedings2])
+            [give_my_embedding(token) for token in precedings2])
         feature_index += len(precedings2)
         embed_feature_matrix[text_offset_index, feature_index:feature_index + 2, :] = np.asarray(
-            [token.vector if token is not None else np.zeros((embed_dim,)) for token in followings2])
+            [give_my_embedding(token) for token in followings2])
         feature_index += len(followings2)
         embed_feature_matrix[text_offset_index, feature_index, :] = np.mean(
-            np.asarray([token.vector if token is not None else np.zeros((embed_dim,)) for token in precedings5]),
+            np.asarray([give_my_embedding(token) for token in precedings5]),
             axis=0)
         feature_index += 1
         embed_feature_matrix[text_offset_index, feature_index, :] = np.mean(
-            np.asarray([token.vector if token is not None else np.zeros((embed_dim,)) for token in followings5]),
+            np.asarray([give_my_embedding(token) for token in followings5]),
             axis=0)
         feature_index += 1
         embed_feature_matrix[text_offset_index, feature_index, :] = np.mean(
-            np.asarray([token.vector for token in sent_tokens]), axis=0) if len(sent_tokens) > 0 else np.zeros(
+            np.asarray([give_my_embedding(token) for token in sent_tokens]), axis=0) if len(sent_tokens) > 0 else np.zeros(
             embed_dim)
         feature_index += 1
 

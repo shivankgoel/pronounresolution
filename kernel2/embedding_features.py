@@ -1,9 +1,4 @@
-from spacy.lang.en import English
-from spacy.pipeline import DependencyParser
-import spacy
-from nltk import Tree
-
-nlp = spacy.load('en_core_web_lg')
+from dependencies import *
 
 
 def to_nltk_tree(node):
