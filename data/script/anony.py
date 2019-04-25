@@ -1,5 +1,5 @@
 import csv
-
+import nltk
 
 class Kaggledata:
   def __init__(self, id,text,pronoun,pronoun_offset,a,a_offset,a_coref,b,b_offset,b_coref,url):
@@ -19,12 +19,30 @@ lst = ['her','His', 'his','She', 'she', 'Him','him','He','Her', 'he']
 oppose_lst = ['his/him','Her', 'her','He', 'he', 'Her','her','She','His/Him', 'she']
 data = []
 
+def processher(tmp):
+        text = nltk.word_tokenize(tmp.text)
+        pos = len(tmp.text[0:tmp.pronoun_offset].split(" "))
+        tag = nltk.pos_tag(text)[pos-1][1]
+        if tag =='PRP':
+            if tmp.pronoun == "her":
+                return "him"
+            else:
+                return "Him"
+        else:
+            if tmp.pronoun == "her":
+                return "his"
+            else:
+                return "His"
+
 def replacesmallest(a,b,c,tmp):
     if a<b and a<c:
         len_pronoun = len(tmp.pronoun)
         prev = tmp.text[0:tmp.pronoun_offset]
         after = tmp.text[tmp.pronoun_offset+len_pronoun:]
-        reverse_pronoun = oppose_lst[lst.index(tmp.pronoun)]
+        if tmp.pronoun =="her" or tmp.pronoun =="Her":
+            reverse_pronoun = processher(tmp)
+        else:
+            reverse_pronoun = oppose_lst[lst.index(tmp.pronoun)]
         diff = len(tmp.pronoun) - len(reverse_pronoun)
         tmp.text = prev + reverse_pronoun + after
         tmp.pronoun = reverse_pronoun
@@ -54,7 +72,10 @@ def replacesecond(a,b,c,tmp,changenum):
         len_pronoun = len(tmp.pronoun)
         prev = tmp.text[0:tmp.pronoun_offset]
         after = tmp.text[tmp.pronoun_offset+len_pronoun:]
-        reverse_pronoun = oppose_lst[lst.index(tmp.pronoun)]
+        if tmp.pronoun =="her" or tmp.pronoun =="Her":
+            reverse_pronoun = processher(tmp)
+        else:
+            reverse_pronoun = oppose_lst[lst.index(tmp.pronoun)]
         diff = len(tmp.pronoun) - len(reverse_pronoun)
         tmp.text = prev + reverse_pronoun + after
         tmp.pronoun = reverse_pronoun
@@ -86,7 +107,10 @@ def replacelast(a,b,c,tmp,changenum):
         len_pronoun = len(tmp.pronoun)
         prev = tmp.text[0:tmp.pronoun_offset]
         after = tmp.text[tmp.pronoun_offset+len_pronoun:]
-        reverse_pronoun = oppose_lst[lst.index(tmp.pronoun)]
+        if tmp.pronoun =="her" or tmp.pronoun =="Her":
+            reverse_pronoun = processher(tmp)
+        else:
+            reverse_pronoun = oppose_lst[lst.index(tmp.pronoun)]
         tmp.text = prev + reverse_pronoun + after
         tmp.pronoun = reverse_pronoun
     elif b>a and b>c:
