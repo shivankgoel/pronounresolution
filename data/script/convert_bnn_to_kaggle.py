@@ -71,6 +71,9 @@ with open('bnn_original.csv') as csvfile:
         b_candidate = getnnp(text)
         #very importent step: shuffle here
         b_candidate = sample(b_candidate, len(b_candidate))
+        b_candidate = [x for x in b_candidate if (x not in a) and (x not in pronoun) and (pronoun not in x) and (a not in x)]
+        if len(b_candidate) < 1:
+            continue
         for i in b_candidate:
             if(i!=pronoun and i!=a):
                 b = i

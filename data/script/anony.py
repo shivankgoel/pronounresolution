@@ -5,6 +5,8 @@ import kaggle_format as kg
 lst = ['her','His', 'his','She', 'she', 'Him','him','He','Her', 'he']
 oppose_lst = ['his/him','Her', 'her','He', 'he', 'Her','her','She','His/Him', 'she']
 data = []
+wrong_num = 0
+total_num = 0
 
 def processher(tmp):
         text = nltk.word_tokenize(tmp.text)
@@ -120,12 +122,16 @@ def test(tmp):
     if(tmp.text[tmp.pronoun_offset:tmp.pronoun_offset+len(tmp.pronoun)] != tmp.pronoun):
         print(tmp.text[tmp.pronoun_offset:tmp.pronoun_offset+len(tmp.pronoun)],tmp.pronoun)
         print("error1")
+        return True
     if(tmp.text[tmp.a_offset:tmp.a_offset+len(tmp.a)] != tmp.a):
         print(tmp.text[tmp.a_offset:tmp.a_offset+len(tmp.a)],tmp.a)
         print("error2")
+        return True
     if(tmp.text[tmp.b_offset:tmp.b_offset+len(tmp.b)] != tmp.b):
         print(tmp.text[tmp.b_offset:tmp.b_offset+len(tmp.b)],tmp.b)
         print("error3")
+        return True
+    return False
 
 with open('bnn_kaggleformat.csv') as tsvfile:
     reader = csv.DictReader(tsvfile,dialect='excel-tab')
@@ -136,10 +142,12 @@ with open('bnn_kaggleformat.csv') as tsvfile:
         change0 = replacesmallest(tmp.pronoun_offset,tmp.a_offset,tmp.b_offset,tmp)
         change1 = replacesecond(tmp.pronoun_offset,tmp.a_offset,tmp.b_offset,tmp,change0)
         replacelast(tmp.pronoun_offset,tmp.a_offset,tmp.b_offset,tmp,change0+change1)
-        test(tmp)
+        wrong_num = wrong_num + test(tmp)
+        total_num = total_num + 1
         data.append(tmp)
+print(wrong_num)
+print(total_num)
 
-'''
 with open('anonymous_bnn.csv', mode='w') as csv_file:
     fieldnames = ['ID','Text','Pronoun','Pronoun-offset','A','A-offset','A-coref','B','B-offset','B-coref','URL']
     writer = csv.DictWriter(csv_file, fieldnames=fieldnames,dialect='excel-tab')
@@ -148,4 +156,3 @@ with open('anonymous_bnn.csv', mode='w') as csv_file:
         writer.writerow({'ID':record.id,'Text': record.text, 'Pronoun': record.pronoun, 'Pronoun-offset': str(record.pronoun_offset),
         'A':record.a, 'A-offset':str(record.a_offset),'A-coref':record.a_coref,
         'B':record.b, 'B-offset':str(record.b_offset),'B-coref':record.b_coref,'URL':record.url})
-'''
