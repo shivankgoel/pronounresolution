@@ -1,19 +1,6 @@
 import csv
 import nltk
-
-class Kaggledata:
-  def __init__(self, id,text,pronoun,pronoun_offset,a,a_offset,a_coref,b,b_offset,b_coref,url):
-    self.id = id
-    self.text = text
-    self.pronoun = pronoun
-    self.pronoun_offset = pronoun_offset
-    self.a = a
-    self.a_offset = a_offset
-    self.a_coref = a_coref
-    self.b = b
-    self.b_offset = b_offset
-    self.b_coref = b_coref
-    self.url = url
+import kaggle_format as kg
 
 lst = ['her','His', 'his','She', 'she', 'Him','him','He','Her', 'he']
 oppose_lst = ['his/him','Her', 'her','He', 'he', 'Her','her','She','His/Him', 'she']
@@ -131,16 +118,19 @@ def replacelast(a,b,c,tmp,changenum):
         tmp.b = "E2"
 def test(tmp):
     if(tmp.text[tmp.pronoun_offset:tmp.pronoun_offset+len(tmp.pronoun)] != tmp.pronoun):
+        print(tmp.text[tmp.pronoun_offset:tmp.pronoun_offset+len(tmp.pronoun)],tmp.pronoun)
         print("error1")
     if(tmp.text[tmp.a_offset:tmp.a_offset+len(tmp.a)] != tmp.a):
+        print(tmp.text[tmp.a_offset:tmp.a_offset+len(tmp.a)],tmp.a)
         print("error2")
     if(tmp.text[tmp.b_offset:tmp.b_offset+len(tmp.b)] != tmp.b):
+        print(tmp.text[tmp.b_offset:tmp.b_offset+len(tmp.b)],tmp.b)
         print("error3")
 
-with open('../kaggle/gap-development.tsv') as tsvfile:
+with open('bnn_kaggleformat.csv') as tsvfile:
     reader = csv.DictReader(tsvfile,dialect='excel-tab')
     for row in reader:
-        tmp = Kaggledata(row['ID'],row['Text'],row['Pronoun'],int(row['Pronoun-offset']),row['A'],int(row['A-offset']),row['A-coref'],
+        tmp = kg.Kaggledata(row['ID'],row['Text'],row['Pronoun'],int(row['Pronoun-offset']),row['A'],int(row['A-offset']),row['A-coref'],
         row['B'],int(row['B-offset']),row['B-coref'],row['URL'])
         #TODO:gender swapping
         change0 = replacesmallest(tmp.pronoun_offset,tmp.a_offset,tmp.b_offset,tmp)
@@ -149,7 +139,8 @@ with open('../kaggle/gap-development.tsv') as tsvfile:
         test(tmp)
         data.append(tmp)
 
-with open('anonymous_kaggle.tsv', mode='w') as csv_file:
+'''
+with open('anonymous_bnn.csv', mode='w') as csv_file:
     fieldnames = ['ID','Text','Pronoun','Pronoun-offset','A','A-offset','A-coref','B','B-offset','B-coref','URL']
     writer = csv.DictWriter(csv_file, fieldnames=fieldnames,dialect='excel-tab')
     writer.writeheader()
@@ -157,3 +148,4 @@ with open('anonymous_kaggle.tsv', mode='w') as csv_file:
         writer.writerow({'ID':record.id,'Text': record.text, 'Pronoun': record.pronoun, 'Pronoun-offset': str(record.pronoun_offset),
         'A':record.a, 'A-offset':str(record.a_offset),'A-coref':record.a_coref,
         'B':record.b, 'B-offset':str(record.b_offset),'B-coref':record.b_coref,'URL':record.url})
+'''
