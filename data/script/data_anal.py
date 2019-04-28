@@ -1,6 +1,6 @@
 import csv
 pronoun  = {}
-with open('../kaggle/gap-development.tsv') as tsvfile:
+with open('../bbn-pcet/bnn_kaggleformat.csv') as tsvfile:
     reader = csv.DictReader(tsvfile,dialect='excel-tab')
     for row in reader:
         temp_pron = row['Pronoun']

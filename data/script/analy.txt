@@ -1,8 +1,14 @@
 In the kaggle dataset:
 {'her': 534, 'His': 33, 'his': 496, 'She': 179, 'she': 249, 'him': 98, 'He': 138, 'Her': 38, 'he': 235}
-total fem: 1197
+total fem: 1000
 total mal: 1000
 
+Original bbn 
 {'he': 3179, 'He': 1035, 'his': 1989, 'him': 395, 'She': 133, 'she': 505, 'her': 479, 'His': 129, 'Her': 32, 'Him': 0}
 total male: 6727
 female:1149
+
+Bbn after extract another person in the sentence
+{'He': 397, 'he': 1144, 'his': 781, 'him': 190, 'she': 157, 'She': 52, 'her': 161, 'Her': 12, 'His': 60}
+Total male: 2572
+Total female: 382
