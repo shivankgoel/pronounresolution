@@ -1,5 +1,5 @@
 from dependencies import *
-from loaddata import *
+# from loaddata import *
 
 
 class mlpmodel(nn.Module):
@@ -35,6 +35,36 @@ e = torch.tensor(pb_pos_dev,dtype=torch.float)
 outs = mod([a,b,c],[d,e])
 '''
 
+data = dict()
+
+with open(data_save_path, 'rb') as f:
+   data = pickle.load(f)
+f.close()
+
+p_emb_tra = data['p_emb_tra']
+p_emb_dev = data['p_emb_dev']
+p_emb_test = data['p_emb_test']
+
+a_emb_tra = data['a_emb_tra']
+a_emb_dev = data['a_emb_dev']
+a_emb_test = data['a_emb_test']
+
+b_emb_tra = data['b_emb_tra']
+b_emb_dev = data['b_emb_dev']
+b_emb_test = data['b_emb_test']
+
+pa_pos_tra = data['pa_pos_tra']
+pa_pos_dev = data['pa_pos_dev']
+pa_pos_test = data['pa_pos_test']
+
+pb_pos_tra = data['pb_pos_tra']
+pb_pos_dev = data['pb_pos_dev']
+pb_pos_test = data['pb_pos_test']
+
+y_tra = data['y_tra']
+y_dev = data['y_dev']
+y_test = data['y_test']
+
 
 dev_data = [torch.tensor(x,dtype=torch.float) for x in [p_emb_dev,a_emb_dev,b_emb_dev,pa_pos_dev,pb_pos_dev]]
 train_data = [torch.tensor(x,dtype=torch.float) for x in [p_emb_tra,a_emb_tra,b_emb_tra,pa_pos_tra,pb_pos_tra]]
@@ -63,17 +93,49 @@ for i in range(num_epochs):
 
 
 model.eval()
+tra_outputs = model([train_data[0],train_data[1],train_data[2]],[train_data[3],train_data[4]])
 dev_outputs = model([dev_data[0],dev_data[1],dev_data[2]],[dev_data[3],dev_data[4]])
-predicted_labels = torch.max(dev_outputs,1)[1]
+test_outputs = model([test_data[0],test_data[1],test_data[2]],[test_data[3],test_data[4]])
 
-sum = 0
-predvals = np.array(predicted_labels)
-truevals = np.array(y_dev)
-for i in range(len(predvals)):
-	if predvals[i] == truevals[i]:
-		sum+=1
+predicted_labels_tra = torch.max(tra_outputs,1)[1]
+predicted_labels_dev = torch.max(dev_outputs,1)[1]
+predicted_labels_test = torch.max(test_outputs,1)[1]
 
-acc = sum/len(predvals)
+predvals_tra = np.array(predicted_labels_tra)
+predvals_dev = np.array(predicted_labels_dev)
+predvals_test = np.array(predicted_labels_test)
+
+truevals_tra = np.array(y_tra)
+truevals_dev = np.array(y_dev)
+truevals_test = np.array(y_test)
+
+pred_dic_tra = dict()
+pred_dic_dev = dict()
+pred_dic_test = dict()
+
+pred_dic_tra['prediction'] = predvals_tra
+pred_dic_dev['prediction'] = predvals_dev
+pred_dic_test['prediction'] = predvals_test
+
+pred_dic_tra['label'] = truevals_tra
+pred_dic_dev['label'] = truevals_dev
+pred_dic_test['label'] = truevals_test
+
+
+with open(result_save_path + '_train.pickle', 'wb') as f:
+   pickle.dump(pred_dic_tra, f, protocol=pickle.HIGHEST_PROTOCOL)
+f.close()
+
+with open(result_save_path + '_dev.pickle', 'wb') as f:
+   pickle.dump(pred_dic_dev, f, protocol=pickle.HIGHEST_PROTOCOL)
+f.close()
+
+with open(result_save_path + '_test.pickle', 'wb') as f:
+   pickle.dump(pred_dic_test, f, protocol=pickle.HIGHEST_PROTOCOL)
+f.close()
+
+
+
 
 #savethemodel
 # def save_checkpoint(filename, **states):

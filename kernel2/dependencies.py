@@ -19,3 +19,12 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 import gensim
+
+import pickle
+
+from sklearn.metrics import f1_score
+from sklearn.metrics import accuracy_score
+
+result_save_path = './result/result_glove_kaggle_kaggle'
+gender_dump_path = './data/gender_label_glove_kaggle_kaggle.pickle'
+data_save_path = './data/data_gap_glove_kaggle_kaggle.pickle'
