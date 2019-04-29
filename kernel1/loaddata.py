@@ -4,7 +4,25 @@ from generate_features import *
 from position_features import *
 
 path = '../data/kaggle'
-train_df = pd.read_csv(path+'/gap-development.tsv', sep='\t')
+if anonymous == 0:
+    train_df = pd.read_csv(path+'/gap-development.tsv', sep='\t')
+elif anonymous == 1:
+    train_df = pd.read_csv(path+'/anonymous_kaggle.tsv', sep='\t')
+elif anonymous == 2:
+    train_df = pd.read_csv(path+'/gap-development.tsv', sep='\t')
+    train_anony_df = pd.read_csv(path+'/anonymous_kaggle.tsv', sep='\t')
+    for i in range(len(train_anony_df['ID'])):
+        # print(train_anony_df['ID'][i].split('-'))
+        num = int(train_anony_df['ID'][i].split('-')[1]) + 2000
+        train_anony_df['ID'][i] = 'development-' + str(num)
+    train_df = train_df.append(train_anony_df)
+    train_df = train_df.sample(frac=1)
+else:
+    print("Anonymous Value Error")
+    exit()
+
+# train_df = pd.read_csv('../data/bbn-pcet/bnn_kaggleformat.csv', sep= '\t')
+
 test_df = pd.read_csv(path+'/gap-test.tsv', sep='\t')
 dev_df = pd.read_csv(path+'/gap-validation.tsv', sep='\t')
 
@@ -44,7 +62,7 @@ gender['train'] = train_gender
 gender['test'] = test_gender
 gender['dev'] = dev_gender
 
-with open('gender_label.pickle', 'wb') as f:
+with open(gender_dump_path, 'wb') as f:
     pickle.dump(gender, f, protocol=pickle.HIGHEST_PROTOCOL)
 f.close()
 
@@ -79,12 +97,36 @@ for text_ in train_tokenized + test_tokenized + dev_tokenized:
 nb_words = min(max_features, len(word_index))
 embedding_matrix = np.zeros((nb_words + 1, embed_size))
 
-for word, i in word_index.items():
-    if i >= max_features: continue
-    embedding_vector = None
-    if nlp.vocab.has_vector(word):
-        embedding_vector = nlp.vocab.vectors[nlp.vocab.strings[word]]
-    if embedding_vector is not None: embedding_matrix[i] = embedding_vector
+if embedding_type == 'None':
+    for word, i in word_index.items():
+        if i >= max_features: continue
+        embedding_vector = None
+        if nlp.vocab.has_vector(word):
+            embedding_vector = nlp.vocab.vectors[nlp.vocab.strings[word]]
+        if embedding_vector is not None: embedding_matrix[i] = embedding_vector
+
+elif embedding_type == 'glove':
+    df = pd.read_csv(word_embedding_path, sep=" ", quoting=3, header=None, index_col=0)
+    glovemodel = {key: val.values for key, val in df.T.items()}
+
+    for word, i in word_index.items():
+        if i >= max_features: continue
+        embedding_vector = None
+        if word in glovemodel:
+            embedding_vector = glovemodel[word]
+        if embedding_vector is not None: embedding_matrix[i] = embedding_vector
+
+elif embedding_type == 'word2vec':
+    from gensim.models import KeyedVectors
+    model = KeyedVectors.load_word2vec_format(word_embedding_path, binary=True)
+
+    for word, i in word_index.items():
+        if i >= max_features: continue
+        embedding_vector = None
+        if word in model:
+            embedding_vector = model[word]
+        if embedding_vector is not None: embedding_matrix[i] = embedding_vector
+
 
 print(embedding_matrix.shape)
 
@@ -206,6 +248,6 @@ data['embedding'] = embedding_matrix
 
 data['position'] = pos_index
 
-with open('data_gap.pickle', 'wb') as f:
-   pickle.dump(data, f, protocol=pickle.HIGHEST_PROTOCOL)
+with open(data_save_path, 'wb') as f:
+    pickle.dump(data, f, protocol=pickle.HIGHEST_PROTOCOL)
 f.close()

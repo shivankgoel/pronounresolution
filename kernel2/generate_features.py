@@ -6,10 +6,10 @@ num_embed_features = 11
 embed_dim = 300
 
 
-df = pd.read_csv('/Users/shivankgoel/Desktop/Projects/Projects/ALT/glove.840B.300d.txt', sep=" ", quoting=3, header=None, index_col=0)
+df = pd.read_csv('../kernel1/glove.840B.300d.txt', sep=" ", quoting=3, header=None, index_col=0)
 glovemodel = {key: val.values for key, val in df.T.items()}
 
-from gensim.models import KeyedVectors
+# from gensim.models import KeyedVectors
 #modeldebiased = KeyedVectors.load_word2vec_format('/Users/shivankgoel/Desktop/Projects/Projects/ALT/GoogleNews-vectors-negative300-hard-debiased.bin', binary=True)
 #modelsimple = KeyedVectors.load_word2vec_format('/Users/shivankgoel/Desktop/Projects/Projects/ALT/GoogleNews-vectors-negative300.bin', binary=True)
 

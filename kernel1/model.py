@@ -1,9 +1,10 @@
 from dependencies import *
 # from loaddata import *
 
+
 data = dict()
 
-with open('data_gap.pickle', 'rb') as f:
+with open(data_save_path, 'rb') as f:
    data = pickle.load(f)
 f.close()
 
@@ -506,16 +507,15 @@ pred_dic_tra['label'] = truevals_tra
 pred_dic_dev['label'] = truevals_dev
 pred_dic_test['label'] = truevals_test
 
-
-with open('result_train.pickle', 'wb') as f:
+with open(result_save_path + '_train.pickle', 'wb') as f:
    pickle.dump(pred_dic_tra, f, protocol=pickle.HIGHEST_PROTOCOL)
 f.close()
 
-with open('result_dev.pickle', 'wb') as f:
+with open(result_save_path + '_dev.pickle', 'wb') as f:
    pickle.dump(pred_dic_dev, f, protocol=pickle.HIGHEST_PROTOCOL)
 f.close()
 
-with open('result_test.pickle', 'wb') as f:
+with open(result_save_path + '_test.pickle', 'wb') as f:
    pickle.dump(pred_dic_test, f, protocol=pickle.HIGHEST_PROTOCOL)
 f.close()
 

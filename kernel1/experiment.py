@@ -1,24 +1,26 @@
 from dependencies import *
 
-with open('result_train.pickle', 'rb') as f:
+
+
+with open(result_save_path + '_train.pickle', 'rb') as f:
     data = pickle.load(f)
     truevals_tra = data['label']
     predvals_tra = data['prediction']
 f.close()
 
-with open('result_dev.pickle', 'rb') as f:
+with open(result_save_path + '_dev.pickle', 'rb') as f:
     data = pickle.load(f)
     truevals_dev = data['label']
     predvals_dev = data['prediction']
 f.close()
 
-with open('result_test.pickle', 'rb') as f:
+with open(result_save_path + '_test.pickle', 'rb') as f:
     data = pickle.load(f)
     truevals_test = data['label']
     predvals_test = data['prediction']
 f.close()
 
-with open('gender_label.pickle', 'rb') as f:
+with open(gender_dump_path, 'rb') as f:
     gender = pickle.load(f)
     train_gender = gender['train']
     test_gender = gender['test']
