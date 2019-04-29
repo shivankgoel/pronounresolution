@@ -133,7 +133,7 @@ def test(tmp):
         return True
     return False
 
-with open('bnn_kaggleformat.csv') as tsvfile:
+with open('bnn_train.csv') as tsvfile:
     reader = csv.DictReader(tsvfile,dialect='excel-tab')
     for row in reader:
         tmp = kg.Kaggledata(row['ID'],row['Text'],row['Pronoun'],int(row['Pronoun-offset']),row['A'],int(row['A-offset']),row['A-coref'],
@@ -148,7 +148,7 @@ with open('bnn_kaggleformat.csv') as tsvfile:
 print(wrong_num)
 print(total_num)
 
-with open('anonymous_bnn.csv', mode='w') as csv_file:
+with open('anonymous_bnn_train.csv', mode='w') as csv_file:
     fieldnames = ['ID','Text','Pronoun','Pronoun-offset','A','A-offset','A-coref','B','B-offset','B-coref','URL']
     writer = csv.DictWriter(csv_file, fieldnames=fieldnames,dialect='excel-tab')
     writer.writeheader()
